@@ -159,6 +159,7 @@ function renderGrid() {
   if (currentFilter === 'under20') filtered = products.filter(p => p.price < 20);
   if (currentFilter === '20to39') filtered = products.filter(p => p.price >= 20 && p.price < 40);
   if (currentFilter === '40plus') filtered = products.filter(p => p.price >= 40);
+  filtered = [...filtered].sort((a, b) => (b.whop ? 1 : 0) - (a.whop ? 1 : 0));
 
   grid.innerHTML = filtered.map(p => `
     <div class="card">
