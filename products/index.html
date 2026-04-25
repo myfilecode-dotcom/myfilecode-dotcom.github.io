@@ -130,28 +130,20 @@ const products = [
 
 let currentFilter = 'all';
 
-const available = products.filter(p => p.whop);
 const total = products.length;
-const liveCount = available.length;
+const under20count = products.filter(p => p.price < 20).length;
+const midcount = products.filter(p => p.price >= 20 && p.price < 40).length;
+const topcount = products.filter(p => p.price >= 40).length;
 
-// Заголовок
-const heroEl = document.getElementById('hero-count');
-if (liveCount > 0) {
-  heroEl.innerHTML = `${liveCount} <span>Next.js</span> App Templates`;
-} else {
-  heroEl.innerHTML = `<span>Next.js</span> App Templates`;
-}
+// Заголовок — всегда показываем кол-во всех продуктов
+document.getElementById('hero-count').innerHTML = `${total} <span>Next.js</span> App Templates`;
 
-// Фильтры динамически
-const filtersEl = document.getElementById('filters');
-const under20 = products.filter(p => p.price < 20).length;
-const mid = products.filter(p => p.price >= 20 && p.price < 40).length;
-const top = products.filter(p => p.price >= 40).length;
-filtersEl.innerHTML = `
+// Фильтры
+document.getElementById('filters').innerHTML = `
   <button class="filter-btn active" onclick="filter('all',this)">All (${total})</button>
-  <button class="filter-btn" onclick="filter('under20',this)">Under $20 (${under20})</button>
-  <button class="filter-btn" onclick="filter('20to39',this)">$20–$39 (${mid})</button>
-  <button class="filter-btn" onclick="filter('40plus',this)">$40+ (${top})</button>
+  <button class="filter-btn" onclick="filter('under20',this)">Under $20 (${under20count})</button>
+  <button class="filter-btn" onclick="filter('20to39',this)">$20–$39 (${midcount})</button>
+  <button class="filter-btn" onclick="filter('40plus',this)">$40+ (${topcount})</button>
 `;
 
 function filter(type, btn) {
