@@ -7,29 +7,29 @@
 <meta name="description" content="81 production-ready Next.js SaaS starter kits. One-time purchase, source code included.">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { background: #09090b; color: #fafafa; font-family: -apple-system, 'Inter', sans-serif; }
+  body { background: #0d1117; color: #e6edf3; font-family: -apple-system, 'Inter', sans-serif; }
 
   .hero { padding: 80px 24px 48px; text-align: center; }
   .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; letter-spacing: -0.03em; }
-  .hero h1 span { background: linear-gradient(135deg, #6366f1, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-  .hero p { margin-top: 16px; color: #a1a1aa; font-size: 1.1rem; max-width: 520px; margin-left: auto; margin-right: auto; }
+  .hero h1 span { color: #58a6ff; }
+  .hero p { margin-top: 16px; color: #8b949e; font-size: 1.1rem; max-width: 520px; margin-left: auto; margin-right: auto; }
 
   .filters { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; padding: 0 24px 32px; max-width: 1200px; margin: 0 auto; }
-  .filter-btn { padding: 6px 16px; border-radius: 20px; border: 1px solid #27272a; background: transparent; color: #a1a1aa; cursor: pointer; font-size: 0.85rem; transition: all 0.15s; }
-  .filter-btn:hover, .filter-btn.active { background: #6366f1; border-color: #6366f1; color: #fff; }
+  .filter-btn { padding: 6px 16px; border-radius: 20px; border: 1px solid #30363d; background: transparent; color: #8b949e; cursor: pointer; font-size: 0.85rem; transition: all 0.15s; }
+  .filter-btn:hover, .filter-btn.active { background: #238636; border-color: #238636; color: #fff; }
 
   .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; padding: 0 24px 80px; max-width: 1200px; margin: 0 auto; }
 
-  .card { background: #18181b; border: 1px solid #27272a; border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 12px; transition: border-color 0.15s, transform 0.15s; }
-  .card:hover { border-color: #6366f1; transform: translateY(-2px); }
+  .card { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 12px; transition: border-color 0.15s, transform 0.15s; }
+  .card:hover { border-color: #58a6ff; transform: translateY(-2px); }
   .card-name { font-size: 1.05rem; font-weight: 700; text-transform: capitalize; }
-  .card-tag { font-size: 0.8rem; color: #71717a; text-transform: uppercase; letter-spacing: 0.06em; }
-  .card-desc { font-size: 0.875rem; color: #a1a1aa; line-height: 1.5; flex: 1; }
+  .card-tag { font-size: 0.8rem; color: #6e7681; text-transform: uppercase; letter-spacing: 0.06em; }
+  .card-desc { font-size: 0.875rem; color: #8b949e; line-height: 1.5; flex: 1; }
   .card-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 4px; }
-  .price { font-size: 1.2rem; font-weight: 800; color: #fafafa; }
-  .buy-btn { padding: 8px 18px; background: #6366f1; color: #fff; border: none; border-radius: 8px; font-size: 0.85rem; font-weight: 600; cursor: pointer; transition: background 0.15s; text-decoration: none; display: inline-block; }
-  .buy-btn:hover { background: #4f46e5; }
-  .buy-btn.soon { background: #27272a; color: #52525b; cursor: default; pointer-events: none; }
+  .price { font-size: 1.2rem; font-weight: 800; color: #e6edf3; }
+  .buy-btn { padding: 8px 18px; background: #238636; color: #fff; border: none; border-radius: 8px; font-size: 0.85rem; font-weight: 600; cursor: pointer; transition: background 0.15s; text-decoration: none; display: inline-block; }
+  .buy-btn:hover { background: #2ea44f; }
+  .buy-btn.soon { background: #21262d; color: #6e7681; cursor: default; pointer-events: none; }
 </style>
 </head>
 <body>
@@ -84,7 +84,7 @@ const products = [
   {"id": "goals", "name": "Goals", "tagline": "Annual goals tracker with milestones, subtasks & year review.", "price": 25, "whop": ""},
   {"id": "invite", "name": "Invite", "tagline": "Beautiful wedding invitation sites with built-in RSVP", "price": 29, "whop": ""},
   {"id": "jobs", "name": "Jobs", "tagline": "Launch a niche job board in an afternoon", "price": 39, "whop": ""},
-  {"id": "ledger", "name": "Ledger", "tagline": "Invoice generator with live preview and payment tracking", "price": 29, "whop": ""},
+  {"id": "ledger", "name": "Ledger", "tagline": "Invoice generator with live preview and payment tracking", "price": 29, "whop": "https://whop.com/myfileapps/ledger-3f"},
   {"id": "lens", "name": "Lens", "tagline": "Content calendar + multi-platform post composer", "price": 29, "whop": ""},
   {"id": "letter", "name": "Letter", "tagline": "Self-hosted newsletter platform with beautiful reading view", "price": 39, "whop": ""},
   {"id": "link", "name": "Link", "tagline": "Your link-in-bio. Built by you. Hosted forever.", "price": 29, "whop": ""},
