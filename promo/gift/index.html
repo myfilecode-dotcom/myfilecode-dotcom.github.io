@@ -37,22 +37,7 @@
   .shot img { width: 100%; height: auto; display: block; }
   .shot-label { padding: 8px 12px; font-size: 0.78rem; color: #8b949e; text-transform: capitalize; border-top: 1px solid #21262d; }
 
-  .promo-md { background: #161b22; border: 1px solid #30363d; border-radius: 10px; padding: 28px 32px; color: #e6edf3; font-size: 0.92rem; line-height: 1.6; }
-  .promo-md h1 { font-size: 1.4rem; margin: 0 0 14px; font-weight: 700; }
-  .promo-md h2 { font-size: 1.15rem; margin: 28px 0 12px; font-weight: 700; padding-top: 20px; border-top: 1px solid #21262d; }
-  .promo-md h2:first-of-type { border-top: none; padding-top: 0; }
-  .promo-md h3 { font-size: 1rem; margin: 20px 0 8px; font-weight: 600; color: #58a6ff; }
-  .promo-md h4 { font-size: 0.92rem; margin: 14px 0 6px; font-weight: 600; }
-  .promo-md p { margin: 0 0 10px; color: #c9d1d9; }
-  .promo-md ul, .promo-md ol { margin: 8px 0 14px 22px; color: #c9d1d9; }
-  .promo-md li { margin: 4px 0; }
-  .promo-md hr { border: none; border-top: 1px solid #21262d; margin: 20px 0; }
-  .promo-md strong { color: #e6edf3; }
-  .promo-md code { background: #0d1117; padding: 1px 6px; border-radius: 4px; font-size: 0.85em; color: #79c0ff; }
-  .promo-md pre { background: #0d1117; border: 1px solid #21262d; border-radius: 8px; padding: 14px 16px; margin: 8px 0 14px; font-size: 0.85rem; line-height: 1.5; overflow-x: auto; }
-  .promo-md pre code { background: transparent; padding: 0; color: #e6edf3; white-space: pre-wrap; word-break: break-word; }
-  .copy-btn { float: right; margin-top: -4px; background: #21262d; border: 1px solid #30363d; color: #8b949e; padding: 4px 10px; border-radius: 6px; font-size: 0.72rem; cursor: pointer; transition: all 0.15s; font-family: inherit; }
-  .copy-btn:hover { background: #30363d; color: #e6edf3; }
+  pre.promo { background: #161b22; border: 1px solid #30363d; border-radius: 10px; padding: 20px; font-size: 0.83rem; line-height: 1.55; overflow-x: auto; color: #e6edf3; white-space: pre-wrap; word-break: break-word; }
 </style>
 </head>
 <body>
@@ -89,8 +74,7 @@
 
   <div class="section">
     <h2>Ready-made promo content</h2>
-    <div class="promo-md" id="promo-md"></div>
-    <script id="promo-md-source" type="text/plain"># Gift — Promo Kit for Affiliates
+    <pre class="promo"># Gift — Promo Kit for Affiliates
 
 **Product:** Gift — Recommendation engine with occasion and budget tracker
 **Price:** $19 one-time
@@ -319,27 +303,9 @@ Full Next.js source
 6. **Pinterest** — pin a screenshot, link to your URL
 7. **Facebook** — gift groups, indie hacker groups
 
-</script>
+</pre>
   </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-<script>
-  const src = document.getElementById('promo-md-source').textContent;
-  document.getElementById('promo-md').innerHTML = marked.parse(src);
-  // Add copy buttons to all <pre><code> blocks
-  document.querySelectorAll('.promo-md pre').forEach(pre => {
-    const btn = document.createElement('button');
-    btn.className = 'copy-btn';
-    btn.textContent = 'Copy';
-    btn.onclick = () => {
-      navigator.clipboard.writeText(pre.textContent.trim());
-      btn.textContent = 'Copied';
-      setTimeout(() => btn.textContent = 'Copy', 1500);
-    };
-    pre.style.position = 'relative';
-    pre.insertBefore(btn, pre.firstChild);
-  });
-</script>
 </body>
 </html>
