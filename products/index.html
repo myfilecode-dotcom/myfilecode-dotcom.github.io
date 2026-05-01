@@ -14,6 +14,12 @@
   .hero h1 span { color: #58a6ff; }
   .hero p { margin-top: 16px; color: #8b949e; font-size: 1.1rem; max-width: 520px; margin-left: auto; margin-right: auto; }
 
+  .search-wrap { display: flex; justify-content: center; padding: 0 24px 16px; max-width: 1200px; margin: 0 auto; }
+  .search { width: 100%; max-width: 480px; padding: 12px 16px 12px 44px; background: #161b22; border: 1px solid #30363d; border-radius: 10px; color: #e6edf3; font-size: 0.95rem; outline: none; transition: border-color 0.15s; background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%238b949e' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='11' cy='11' r='8'/><path d='m21 21-4.35-4.35'/></svg>"); background-repeat: no-repeat; background-position: 16px center; }
+  .search::placeholder { color: #6e7681; }
+  .search:focus { border-color: #58a6ff; }
+  .empty-state { text-align: center; color: #8b949e; padding: 48px 24px; font-size: 0.95rem; }
+
   .filters { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; padding: 0 24px 32px; max-width: 1200px; margin: 0 auto; }
   .filter-btn { padding: 6px 16px; border-radius: 20px; border: 1px solid #30363d; background: transparent; color: #8b949e; cursor: pointer; font-size: 0.85rem; transition: all 0.15s; }
   .filter-btn:hover, .filter-btn.active { background: #238636; border-color: #238636; color: #fff; }
@@ -47,6 +53,10 @@
   </a>
   <h1 id="hero-count"></h1>
   <p>Production-ready SaaS starter kits. Source code included. One-time purchase - yours forever.</p>
+</div>
+
+<div class="search-wrap">
+  <input type="text" class="search" id="search" placeholder="Search by name or feature..." />
 </div>
 
 <div class="filters" id="filters"></div>
@@ -139,6 +149,7 @@ const products = [
 ];
 
 let currentFilter = 'all';
+let searchQuery = '';
 
 const total = products.length;
 const under20count = products.filter(p => p.price < 20).length;
@@ -169,7 +180,18 @@ function renderGrid() {
   if (currentFilter === 'under20') filtered = products.filter(p => p.price < 20);
   if (currentFilter === '20to39') filtered = products.filter(p => p.price >= 20 && p.price < 40);
   if (currentFilter === '40plus') filtered = products.filter(p => p.price >= 40);
+
+  if (searchQuery) {
+    const q = searchQuery.toLowerCase();
+    filtered = filtered.filter(p => p.name.toLowerCase().includes(q) || p.tagline.toLowerCase().includes(q));
+  }
+
   filtered = [...filtered].sort((a, b) => (b.whop ? 1 : 0) - (a.whop ? 1 : 0));
+
+  if (filtered.length === 0) {
+    grid.innerHTML = `<div class="empty-state" style="grid-column:1/-1;">No templates match "${searchQuery}". Try another search.</div>`;
+    return;
+  }
 
   grid.innerHTML = filtered.map(p => `
     <div class="card">
@@ -188,6 +210,11 @@ function renderGrid() {
     </div>
   `).join('');
 }
+
+document.getElementById('search').addEventListener('input', (e) => {
+  searchQuery = e.target.value.trim();
+  renderGrid();
+});
 
 renderGrid();
 </script>
