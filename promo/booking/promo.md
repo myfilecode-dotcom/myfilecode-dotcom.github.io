@@ -11,7 +11,6 @@
 
 - `bookings.png` — bookings
 - `home.png` — home
-- `service.png` — service
 
 ---
 

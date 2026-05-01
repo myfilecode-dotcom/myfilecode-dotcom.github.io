@@ -11,7 +11,6 @@
 
 - `home.png` — home
 - `pets.png` — pets
-- `provider.png` — provider
 
 ---
 

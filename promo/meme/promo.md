@@ -10,7 +10,6 @@
 ## Screenshots
 
 - `home.png` — MemeForge editor with template, top/bottom text, font controls
-- `library.png` — Saved memes library, locally stored
 - `upload.png` — Upload your own image flow with caption editor
 
 ---

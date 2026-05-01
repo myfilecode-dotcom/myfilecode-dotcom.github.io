@@ -9,7 +9,6 @@
 
 ## Screenshots
 
-- `client.png` — client
 - `home.png` — home
 - `profile.png` — profile
 

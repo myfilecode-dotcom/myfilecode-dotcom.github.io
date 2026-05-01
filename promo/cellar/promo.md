@@ -10,7 +10,6 @@
 ## Screenshots
 
 - `add.png` — add
-- `cellar.png` — cellar
 - `home.png` — home
 
 ---

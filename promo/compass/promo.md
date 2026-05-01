@@ -10,7 +10,6 @@
 ## Screenshots
 
 - `home.png` — home
-- `room.png` — room
 - `shop.png` — shop
 
 ---

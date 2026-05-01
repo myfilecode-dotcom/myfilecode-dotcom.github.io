@@ -11,7 +11,6 @@
 
 - `home.png` — Invitation builder dashboard with hosted invites and themes
 - `invite.png` — Public invitation page with starry theme, RSVP CTA, directions
-- `rsvps.png` — RSVP manager with guest list, attendance, dietary needs
 
 ---
 

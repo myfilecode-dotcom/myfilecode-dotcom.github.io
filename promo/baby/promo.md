@@ -10,7 +10,6 @@
 ## Screenshots
 
 - `compare.png` — compare
-- `favorites.png` — favorites
 - `home.png` — home
 
 ---

@@ -9,8 +9,6 @@
 
 ## Screenshots
 
-- `cert.png` — cert
-- `config.png` — config
 - `home.png` — home
 
 ---

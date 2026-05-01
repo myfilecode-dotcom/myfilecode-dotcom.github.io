@@ -9,7 +9,6 @@
 
 ## Screenshots
 
-- `brand.png` — brand
 - `home.png` — home
 - `submit.png` — submit
 

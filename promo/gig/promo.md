@@ -11,7 +11,6 @@
 
 - `home.png` — GigOS dashboard with proposal stats and revenue
 - `projects.png` — Active projects with milestones and payment status
-- `proposal.png` — Proposal builder with services, deliverables, timeline
 
 ---
 
