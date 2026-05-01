@@ -25,12 +25,17 @@
   .filter-btn:hover { background: rgba(255,255,255,0.06); border-color: #8b949e; color: #e6edf3; }
   .filter-btn.active { background: #fff; border-color: #fff; color: #0d1117; }
 
-  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; padding: 0 24px 80px; max-width: 1200px; margin: 0 auto; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; padding: 0 24px 80px; max-width: 1200px; margin: 0 auto; }
 
-  .card { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 12px; transition: border-color 0.15s, transform 0.15s; }
+  .card { background: #161b22; border: 1px solid #30363d; border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; transition: border-color 0.15s, transform 0.15s; cursor: pointer; }
   .card:hover { border-color: #58a6ff; transform: translateY(-2px); }
+  .card-cover { aspect-ratio: 16/10; background: #0d1117; overflow: hidden; position: relative; border-bottom: 1px solid #30363d; }
+  .card-cover img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; transition: transform 0.3s; }
+  .card:hover .card-cover img { transform: scale(1.03); }
+  .card-screens-pill { position: absolute; top: 8px; right: 8px; background: rgba(13,17,23,0.85); backdrop-filter: blur(4px); color: #e6edf3; font-size: 0.72rem; padding: 3px 8px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.08); }
+  .card-body { padding: 16px 18px 18px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
   .card-name { font-size: 1.05rem; font-weight: 700; text-transform: capitalize; }
-  .card-tag { font-size: 0.8rem; color: #6e7681; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 8px; }
+  .card-tag { font-size: 0.74rem; color: #6e7681; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px; }
   .card-desc { font-size: 0.875rem; color: #8b949e; line-height: 1.5; flex: 1; }
   .card-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 4px; }
   .price { font-size: 1.2rem; font-weight: 800; color: #e6edf3; }
@@ -40,6 +45,37 @@
 
   .tags { display: flex; flex-wrap: wrap; gap: 6px; }
   .tag { font-size: 0.72rem; padding: 3px 8px; background: #21262d; color: #8b949e; border-radius: 999px; letter-spacing: 0.02em; }
+
+  .modal-backdrop { position: fixed; inset: 0; background: rgba(1,4,9,0.85); backdrop-filter: blur(6px); z-index: 100; display: none; align-items: flex-start; justify-content: center; padding: 40px 16px; overflow-y: auto; }
+  .modal-backdrop.open { display: flex; }
+  .modal { background: #0d1117; border: 1px solid #30363d; border-radius: 14px; max-width: 880px; width: 100%; overflow: hidden; animation: modalIn 0.18s ease-out; }
+  @keyframes modalIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+  .modal-close { position: absolute; top: 24px; right: 24px; width: 36px; height: 36px; border-radius: 50%; background: #161b22; border: 1px solid #30363d; color: #e6edf3; font-size: 1.1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.15s; z-index: 10; }
+  .modal-close:hover { background: #21262d; border-color: #58a6ff; }
+  .modal-hero { aspect-ratio: 16/9; background: #0d1117; overflow: hidden; border-bottom: 1px solid #30363d; }
+  .modal-hero img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+  .modal-body { padding: 28px 32px 32px; }
+  .modal-tag { font-size: 0.74rem; color: #6e7681; text-transform: uppercase; letter-spacing: 0.06em; }
+  .modal-title { font-size: 1.8rem; font-weight: 800; margin-top: 6px; text-transform: capitalize; }
+  .modal-tagline { color: #8b949e; font-size: 1rem; margin-top: 8px; line-height: 1.5; }
+  .modal-section { margin-top: 24px; }
+  .modal-section-label { font-size: 0.78rem; color: #6e7681; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 10px; font-weight: 600; }
+  .modal-pages { display: flex; flex-wrap: wrap; gap: 8px; }
+  .modal-page { font-size: 0.82rem; padding: 5px 12px; background: #161b22; border: 1px solid #30363d; border-radius: 6px; color: #e6edf3; text-transform: capitalize; }
+  .modal-screens { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 10px; }
+  .modal-shot { background: #161b22; border: 1px solid #30363d; border-radius: 8px; overflow: hidden; }
+  .modal-shot img { width: 100%; height: auto; display: block; }
+  .modal-shot-label { padding: 6px 10px; font-size: 0.74rem; color: #8b949e; border-top: 1px solid #21262d; text-transform: capitalize; }
+  .modal-cta { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-top: 28px; padding-top: 24px; border-top: 1px solid #21262d; flex-wrap: wrap; }
+  .modal-price { font-size: 1.6rem; font-weight: 800; }
+  .modal-buttons { display: flex; gap: 10px; flex-wrap: wrap; }
+  .modal-btn { padding: 11px 22px; border-radius: 8px; font-size: 0.92rem; font-weight: 600; text-decoration: none; transition: all 0.15s; display: inline-block; }
+  .modal-btn.primary { background: #238636; color: #fff; }
+  .modal-btn.primary:hover { background: #2ea44f; }
+  .modal-btn.secondary { background: #21262d; color: #e6edf3; border: 1px solid #30363d; }
+  .modal-btn.secondary:hover { background: #30363d; }
+  .modal-btn.soon { background: #21262d; color: #6e7681; cursor: default; pointer-events: none; }
+  body.modal-open { overflow: hidden; }
 
   .affiliate-banner { display: inline-flex; align-items: center; gap: 12px; margin-bottom: 32px; padding: 8px 20px 8px 8px; background: #161b22; border: 1px solid #30363d; border-radius: 999px; color: #e6edf3; text-decoration: none; font-size: 0.92rem; font-weight: 500; transition: all 0.15s; }
   .affiliate-banner:hover { border-color: #58a6ff; transform: translateY(-1px); }
@@ -66,7 +102,16 @@
 
 <div class="grid" id="grid"></div>
 
+<div class="modal-backdrop" id="modal-backdrop">
+  <div class="modal" id="modal" style="position:relative;">
+    <button class="modal-close" onclick="closeModal()" aria-label="Close">×</button>
+    <div id="modal-content"></div>
+  </div>
+</div>
+
 <script>
+const meta = {"alumni": {"hero": "home.png", "screens": ["home.png", "opportunities.png", "profile.png"]}, "astro": {"hero": "home.png", "screens": ["chart.png", "compatibility.png", "home.png", "journal.png"]}, "baby": {"hero": "home.png", "screens": ["compare.png", "home.png"]}, "blocks": {"hero": "templates.png", "screens": ["home.png", "templates.png", "week.png"]}, "book": {"hero": "home.png", "screens": ["dashboard.png", "home.png", "settings.png"]}, "booking": {"hero": "home.png", "screens": ["bookings.png", "home.png"]}, "boutique": {"hero": "home.png", "screens": ["home.png", "submit.png"]}, "breed": {"hero": "home.png", "screens": ["home.png", "pets.png"]}, "brief": {"hero": "profile.png", "screens": ["home.png", "profile.png"]}, "budget": {"hero": "home.png", "screens": ["home.png", "insights.png", "transactions.png"]}, "capital": {"hero": "home.png", "screens": ["home.png", "saved.png", "tracker.png"]}, "cellar": {"hero": "add.png", "screens": ["add.png", "home.png"]}, "cert": {"hero": "home.png", "screens": ["home.png"]}, "changelog": {"hero": "roadmap.png", "screens": ["admin.png", "home.png", "roadmap.png"]}, "coach": {"hero": "session.png", "screens": ["home.png", "insights.png", "session.png"]}, "compass": {"hero": "shop.png", "screens": ["home.png", "shop.png"]}, "comply": {"hero": "document.png", "screens": ["doc-types.png", "document.png", "home.png"]}, "countdown": {"hero": "countdown-public.png", "screens": ["countdown-public.png", "editor.png", "home.png"]}, "crm": {"hero": "home.png", "screens": ["contact-detail.png", "home.png", "pipeline.png"]}, "day": {"hero": "home.png", "screens": ["archive.png", "entry.png", "home.png"]}, "deal": {"hero": "deal-detail.png", "screens": ["analytics.png", "deal-detail.png", "home.png"]}, "dir": {"hero": "home.png", "screens": ["admin.png", "home.png", "tool-detail.png"]}, "dose": {"hero": "schedule.png", "screens": ["history.png", "home.png", "schedule.png"]}, "estate": {"hero": "home.png", "screens": ["home.png", "leads.png", "listing.png"]}, "event": {"hero": "event-checklist.png", "screens": ["event-checklist.png", "event-overview.png", "home.png"]}, "faq": {"hero": "editor.png", "screens": ["editor.png", "home.png", "preview.png"]}, "feedback": {"hero": "home.png", "screens": ["admin.png", "home.png", "item.png"]}, "fit": {"hero": "home.png", "screens": ["home.png", "tailor.png", "tracker.png"]}, "flow": {"hero": "home.png", "screens": ["home.png", "saved.png", "write.png"]}, "fomo": {"hero": "widget-preview.png", "screens": ["home.png", "widget-editor.png", "widget-preview.png"]}, "forge": {"hero": "trends.png", "screens": ["home.png", "settings.png", "trends.png"]}, "forum": {"hero": "home.png", "screens": ["category.png", "home.png", "thread.png"]}, "garden": {"hero": "discover.png", "screens": ["add.png", "discover.png", "home.png"]}, "gift": {"hero": "home.png", "screens": ["find.png", "home.png", "lists.png"]}, "gig": {"hero": "home.png", "screens": ["home.png", "projects.png"]}, "goals": {"hero": "home.png", "screens": ["add.png", "home.png", "review.png"]}, "invite": {"hero": "invite.png", "screens": ["home.png", "invite.png"]}, "jobs": {"hero": "home.png", "screens": ["admin.png", "home.png", "post.png"]}, "ledger": {"hero": "invoice.png", "screens": ["clients.png", "home.png", "invoice.png"]}, "lens": {"hero": "posts.png", "screens": ["compose.png", "home.png", "posts.png"]}, "letter": {"hero": "issues.png", "screens": ["home.png", "issues.png", "subscribers.png"]}, "link": {"hero": "links.png", "screens": ["home.png", "links.png", "public.png"]}, "match": {"hero": "home.png", "screens": ["home.png", "profile.png", "saved.png"]}, "meme": {"hero": "home.png", "screens": ["home.png", "upload.png"]}, "mentor": {"hero": "home.png", "screens": ["home.png", "resources.png", "sessions.png"]}, "menu": {"hero": "public.png", "screens": ["home.png", "menu.png", "public.png"]}, "metric": {"hero": "home.png", "screens": ["history.png", "home.png", "runway.png"]}, "nomad": {"hero": "compare.png", "screens": ["compare.png", "home.png", "insights.png"]}, "ogcard": {"hero": "home.png", "screens": ["editor.png", "home.png", "library.png"]}, "okr": {"hero": "objective.png", "screens": ["history.png", "home.png", "objective.png"]}, "palette": {"hero": "home.png", "screens": ["accessibility.png", "harmony.png", "home.png"]}, "peak": {"hero": "home.png", "screens": ["checkin.png", "history.png", "home.png"]}, "pet": {"hero": "home.png", "screens": ["add.png", "home.png", "pet-detail.png"]}, "pitch": {"hero": "present.png", "screens": ["deck.png", "home.png", "present.png"]}, "portal": {"hero": "dashboard.png", "screens": ["clients.png", "dashboard.png", "projects.png"]}, "privacy": {"hero": "doc.png", "screens": ["doc.png", "generate.png", "home.png"]}, "pulse": {"hero": "exercises.png", "screens": ["exercises.png", "home.png", "insights.png"]}, "quiz": {"hero": "quiz.png", "screens": ["edit.png", "home.png", "quiz.png"]}, "recipe": {"hero": "recipe.png", "screens": ["home.png", "planner.png", "recipe.png"]}, "repurpose": {"hero": "home.png", "screens": ["home.png", "saved.png", "settings.png"]}, "resume": {"hero": "builder.png", "screens": ["builder.png", "home.png", "preview.png"]}, "retreat": {"hero": "retreat.png", "screens": ["home.png", "retreat.png", "saved.png"]}, "retro": {"hero": "board.png", "screens": ["actions.png", "board.png", "home.png"]}, "rings": {"hero": "home.png", "screens": ["budget.png", "checklist.png", "home.png"]}, "roast": {"hero": "roast.png", "screens": ["home.png", "report.png", "roast.png"]}, "shout": {"hero": "wall.png", "screens": ["home.png", "manage.png", "wall.png"]}, "signal": {"hero": "wall.png", "screens": ["collection.png", "home.png", "wall.png"]}, "stack": {"hero": "home.png", "screens": ["home.png", "preview.png", "public.png"]}, "status": {"hero": "admin.png", "screens": ["admin.png", "home.png", "incident.png"]}, "store": {"hero": "home.png", "screens": ["admin.png", "home.png", "product.png"]}, "studio": {"hero": "members.png", "screens": ["home.png", "members.png", "schedule.png"]}, "study": {"hero": "stats.png", "screens": ["home.png", "stats.png", "study.png"]}, "tarot": {"hero": "cards.png", "screens": ["cards.png", "home.png", "journal.png"]}, "thread": {"hero": "home.png", "screens": ["generate.png", "home.png", "saved.png"]}, "ticks": {"hero": "settings.png", "screens": ["habits.png", "home.png", "settings.png"]}, "tips": {"hero": "home.png", "screens": ["edit.png", "home.png", "public.png"]}, "tome": {"hero": "stats.png", "screens": ["home.png", "quotes.png", "stats.png"]}, "vault": {"hero": "home.png", "screens": ["home.png", "people.png", "settings.png"]}, "vision": {"hero": "home.png", "screens": ["board.png", "goals.png", "home.png"]}, "waitlist": {"hero": "join.png", "screens": ["entries.png", "home.png", "join.png"]}};
+
 const products = [
 {
 "id": "alumni",
@@ -1155,24 +1200,106 @@ function renderGrid() {
     return;
   }
 
-  grid.innerHTML = filtered.map(p => `
-    <div class="card">
-      <div>
-        <div class="card-tag">Next.js · TypeScript</div>
-        <div class="card-name">${p.name}</div>
-      </div>
-      <div class="card-desc">${p.tagline}</div>
-      ${p.tags ? `<div class="tags">${p.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>` : ''}
-      <div class="card-footer">
-        <div class="price">$${p.price}</div>
-        ${p.whop
-          ? `<a class="buy-btn" href="${p.whop}" target="_blank" rel="noopener">Buy now</a>`
-          : `<span class="buy-btn soon">Coming soon</span>`
-        }
+  grid.innerHTML = filtered.map(p => {
+    const m = meta[p.id] || { hero: null, screens: [] };
+    const screensCount = m.screens.length;
+    const screensLabel = screensCount === 1 ? '1 screen' : `${screensCount} screens`;
+    const cover = m.hero
+      ? `<div class="card-cover"><img src="/promo/${p.id}/${m.hero}" alt="${p.name} preview" loading="lazy" />${screensCount > 1 ? `<span class="card-screens-pill">${screensLabel}</span>` : ''}</div>`
+      : '';
+    return `
+    <div class="card" onclick="openModal('${p.id}')">
+      ${cover}
+      <div class="card-body">
+        <div>
+          <div class="card-tag">Next.js · TypeScript${screensCount === 1 ? ` · 1 screen` : ''}</div>
+          <div class="card-name">${p.name}</div>
+        </div>
+        <div class="card-desc">${p.tagline}</div>
+        ${p.tags ? `<div class="tags">${p.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>` : ''}
+        <div class="card-footer">
+          <div class="price">$${p.price}</div>
+          ${p.whop
+            ? `<a class="buy-btn" href="${p.whop}" target="_blank" rel="noopener" onclick="event.stopPropagation()">Buy now</a>`
+            : `<span class="buy-btn soon">Coming soon</span>`
+          }
+        </div>
       </div>
     </div>
-  `).join('');
+  `;
+  }).join('');
 }
+
+function pageLabel(filename) {
+  return filename.replace('.png', '').replace(/-/g, ' ');
+}
+
+function openModal(id) {
+  const p = products.find(x => x.id === id);
+  if (!p) return;
+  const m = meta[id] || { hero: null, screens: [] };
+  const screensCount = m.screens.length;
+  const pagesHTML = m.screens.map(s => `<span class="modal-page">${pageLabel(s)}</span>`).join('');
+  const shotsHTML = m.screens.map(s => `
+    <div class="modal-shot">
+      <img src="/promo/${id}/${s}" alt="${pageLabel(s)}" loading="lazy" />
+      <div class="modal-shot-label">${pageLabel(s)}</div>
+    </div>`).join('');
+  const tagsHTML = p.tags ? p.tags.map(t => `<span class="tag">${t}</span>`).join('') : '';
+
+  document.getElementById('modal-content').innerHTML = `
+    ${m.hero ? `<div class="modal-hero"><img src="/promo/${id}/${m.hero}" alt="${p.name}" /></div>` : ''}
+    <div class="modal-body">
+      <div class="modal-tag">Next.js · TypeScript · ${screensCount} ${screensCount === 1 ? 'screen' : 'screens'}</div>
+      <h2 class="modal-title">${p.name}</h2>
+      <p class="modal-tagline">${p.tagline}</p>
+
+      ${p.tags ? `
+        <div class="modal-section">
+          <div class="modal-section-label">Features</div>
+          <div class="tags">${tagsHTML}</div>
+        </div>` : ''}
+
+      ${m.screens.length ? `
+        <div class="modal-section">
+          <div class="modal-section-label">Pages included</div>
+          <div class="modal-pages">${pagesHTML}</div>
+        </div>` : ''}
+
+      ${m.screens.length ? `
+        <div class="modal-section">
+          <div class="modal-section-label">Screenshots</div>
+          <div class="modal-screens">${shotsHTML}</div>
+        </div>` : ''}
+
+      <div class="modal-cta">
+        <div class="modal-price">$${p.price}<span style="font-size:0.85rem;font-weight:500;color:#8b949e;"> one-time</span></div>
+        <div class="modal-buttons">
+          <a class="modal-btn secondary" href="/promo/${id}/" target="_blank" rel="noopener">View promo kit</a>
+          ${p.whop
+            ? `<a class="modal-btn primary" href="${p.whop}" target="_blank" rel="noopener">Buy now</a>`
+            : `<span class="modal-btn soon">Coming soon</span>`
+          }
+        </div>
+      </div>
+    </div>
+  `;
+  document.getElementById('modal-backdrop').classList.add('open');
+  document.body.classList.add('modal-open');
+}
+
+function closeModal() {
+  document.getElementById('modal-backdrop').classList.remove('open');
+  document.body.classList.remove('modal-open');
+}
+
+document.getElementById('modal-backdrop').addEventListener('click', (e) => {
+  if (e.target.id === 'modal-backdrop') closeModal();
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeModal();
+});
 
 document.getElementById('search').addEventListener('input', (e) => {
   searchQuery = e.target.value.trim();
