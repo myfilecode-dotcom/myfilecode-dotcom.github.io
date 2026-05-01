@@ -50,7 +50,8 @@
   .modal-backdrop.open { display: flex; }
   .modal { background: #0d1117; border: 1px solid #30363d; border-radius: 14px; max-width: 880px; width: 100%; overflow: hidden; animation: modalIn 0.18s ease-out; }
   @keyframes modalIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
-  .modal-close { position: fixed; top: 24px; right: 24px; width: 40px; height: 40px; border-radius: 50%; background: #161b22; border: 1px solid #30363d; color: #e6edf3; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.15s; z-index: 110; padding: 0; }
+  .modal-close { position: fixed; top: 20px; right: 20px; width: 40px; height: 40px; border-radius: 50%; background: #161b22; border: 1px solid #30363d; color: #e6edf3; cursor: pointer; align-items: center; justify-content: center; transition: all 0.15s; z-index: 200; padding: 0; display: none; }
+  body.modal-open .modal-close { display: flex; }
   .modal-close:hover { background: #21262d; border-color: #58a6ff; }
   .modal-close svg { width: 16px; height: 16px; display: block; }
   .modal-hero { aspect-ratio: 16/9; background: #0d1117; overflow: hidden; border-bottom: 1px solid #30363d; }
@@ -78,10 +79,17 @@
   .modal-btn.soon { background: #21262d; color: #6e7681; cursor: default; pointer-events: none; }
   body.modal-open { overflow: hidden; }
 
-  .affiliate-banner { display: inline-flex; align-items: center; gap: 12px; margin-bottom: 32px; padding: 8px 20px 8px 8px; background: #161b22; border: 1px solid #30363d; border-radius: 999px; color: #e6edf3; text-decoration: none; font-size: 0.92rem; font-weight: 500; transition: all 0.15s; }
+  .affiliate-banner { display: inline-flex; align-items: center; gap: 12px; margin-bottom: 32px; padding: 8px 20px 8px 8px; background: #161b22; border: 1px solid #30363d; border-radius: 999px; color: #e6edf3; text-decoration: none; font-size: 0.92rem; font-weight: 500; transition: all 0.15s; max-width: 100%; }
   .affiliate-banner:hover { border-color: #58a6ff; transform: translateY(-1px); }
-  .affiliate-banner .pill { background: #1f6feb; color: #fff; padding: 8px 14px; border-radius: 999px; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.04em; line-height: 1; }
+  .affiliate-banner .pill { background: #1f6feb; color: #fff; padding: 8px 14px; border-radius: 999px; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.04em; line-height: 1; flex-shrink: 0; }
+  .affiliate-banner .banner-text-short { display: none; }
   .affiliate-banner .arrow { color: #58a6ff; font-weight: 700; }
+  @media (max-width: 520px) {
+    .affiliate-banner { font-size: 0.85rem; padding: 6px 16px 6px 6px; gap: 10px; margin-bottom: 24px; }
+    .affiliate-banner .pill { padding: 6px 10px; font-size: 0.7rem; }
+    .affiliate-banner .banner-text-long { display: none; }
+    .affiliate-banner .banner-text-short { display: inline; }
+  }
 </style>
 </head>
 <body>
@@ -89,7 +97,8 @@
 <div class="hero">
   <a class="affiliate-banner" href="/partners/">
     <span class="pill">EARN 50%</span>
-    <span>Promote our apps and get paid per sale</span>
+    <span class="banner-text-long">Promote our apps and get paid per sale</span>
+    <span class="banner-text-short">Affiliate program →</span>
   </a>
   <h1 id="hero-count"></h1>
   <p>Production-ready SaaS starter kits. Source code included. One-time purchase - yours forever.</p>
@@ -103,11 +112,12 @@
 
 <div class="grid" id="grid"></div>
 
+<button class="modal-close" onclick="closeModal()" aria-label="Close">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+</button>
+
 <div class="modal-backdrop" id="modal-backdrop">
-  <div class="modal" id="modal" style="position:relative;">
-    <button class="modal-close" onclick="closeModal()" aria-label="Close">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-    </button>
+  <div class="modal" id="modal">
     <div id="modal-content"></div>
   </div>
 </div>
