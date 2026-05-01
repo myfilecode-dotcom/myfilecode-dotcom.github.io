@@ -83,7 +83,9 @@
   .affiliate-banner:hover { border-color: #58a6ff; transform: translateY(-1px); }
   .affiliate-banner .pill { background: #1f6feb; color: #fff; padding: 8px 14px; border-radius: 999px; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.04em; line-height: 1; flex-shrink: 0; }
   .affiliate-banner .banner-text-short { display: none; }
-  .affiliate-banner .arrow { color: #58a6ff; font-weight: 700; }
+  .affiliate-banner .chevron { display: inline-flex; align-items: center; color: #58a6ff; flex-shrink: 0; transition: transform 0.15s; margin-left: -2px; }
+  .affiliate-banner .chevron svg { width: 16px; height: 16px; }
+  .affiliate-banner:hover .chevron { transform: translateX(3px); }
   @media (max-width: 520px) {
     .affiliate-banner { font-size: 0.85rem; padding: 6px 16px 6px 6px; gap: 10px; margin-bottom: 24px; }
     .affiliate-banner .pill { padding: 6px 10px; font-size: 0.7rem; }
@@ -98,7 +100,8 @@
   <a class="affiliate-banner" href="/partners/">
     <span class="pill">EARN 50%</span>
     <span class="banner-text-long">Promote our apps and get paid per sale</span>
-    <span class="banner-text-short">Affiliate program →</span>
+    <span class="banner-text-short">Affiliate program</span>
+    <span class="chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></span>
   </a>
   <h1 id="hero-count"></h1>
   <p>Production-ready SaaS starter kits. Source code included. One-time purchase - yours forever.</p>
