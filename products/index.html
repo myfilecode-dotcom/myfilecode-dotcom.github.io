@@ -30,6 +30,11 @@
   .buy-btn { padding: 8px 18px; background: #238636; color: #fff; border: none; border-radius: 8px; font-size: 0.85rem; font-weight: 600; cursor: pointer; transition: background 0.15s; text-decoration: none; display: inline-block; }
   .buy-btn:hover { background: #2ea44f; }
   .buy-btn.soon { background: #21262d; color: #6e7681; cursor: default; pointer-events: none; }
+
+  .affiliate-banner { display: inline-flex; align-items: center; gap: 10px; margin-top: 24px; padding: 10px 18px; background: #161b22; border: 1px solid #30363d; border-radius: 999px; color: #e6edf3; text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: all 0.15s; }
+  .affiliate-banner:hover { border-color: #58a6ff; transform: translateY(-1px); }
+  .affiliate-banner .pill { background: #1f6feb; color: #fff; padding: 2px 10px; border-radius: 999px; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.02em; }
+  .affiliate-banner .arrow { color: #58a6ff; font-weight: 700; }
 </style>
 </head>
 <body>
@@ -37,6 +42,11 @@
 <div class="hero">
   <h1 id="hero-count"></h1>
   <p>Production-ready SaaS starter kits. Source code included. One-time purchase - yours forever.</p>
+  <a class="affiliate-banner" href="/partners/">
+    <span class="pill">EARN 50%</span>
+    <span>Promote our apps and get paid per sale</span>
+    <span class="arrow">→</span>
+  </a>
 </div>
 
 <div class="filters" id="filters"></div>
