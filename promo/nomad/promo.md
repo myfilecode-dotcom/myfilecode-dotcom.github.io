@@ -1,0 +1,229 @@
+# Nomad — Promo Kit for Affiliates
+
+**Product:** Nomad — Relocation tool with city comparison and checklist
+**Price:** $49 one-time
+**Your link:** https://whop.com/myfileapps/nomad (replace with your affiliate URL)
+**Commission:** 50% per sale = ~$24.5
+
+---
+
+## Screenshots
+
+- `home.png` — Nomad home with city pickers and Move smarter, not harder hero
+- `compare.png` — Side-by-side city comparison: cost diff, savings, quality of life
+- `insights.png` — Insider tips from people who actually moved, filtered by city/topic
+
+---
+
+## Twitter / X (10 posts)
+
+1. ```
+Built a city comparison and relocation tool that doesn't suck.
+No subscription. No ads. Just code you own.
+$49 one-time → run it forever.
+{your_link}
+   ```
+
+2. ```
+Stop paying $9/mo for relocation apps.
+Nomad: compare 12 cities, monthly savings, roadmap checklist, insider tips.
+Self-hosted. Yours forever.
+$49. {your_link}
+   ```
+
+3. ```
+Digital nomads and expats — this is your sign.
+Full Next.js source code. compare 12 cities, monthly savings, roadmap checklist, insider tips.
+Deploy on Vercel in 5 mins.
+$49 once. {your_link}
+   ```
+
+4. ```
+You can charge clients for your own relocation service or expat consultancy using this app.
+Or run it for yourself.
+Either way — $49, you own the code.
+{your_link}
+   ```
+
+5. ```
+Compare cost of living between any two cities. See savings, taxes, visa info.
+Add it to your relocation side project.
+$49 one-time. {your_link}
+   ```
+
+6. ```
+indie devs: stop building from scratch.
+Nomad template = $49, deploys in minutes, real users will pay $5/mo to use it.
+{your_link}
+   ```
+
+7. ```
+Bought Nomad template last week, deployed it, 3 friends already using it daily.
+$49. Forever.
+{your_link}
+   ```
+
+8. ```
+Best $49 I spent this month — full Next.js relocation app.
+compare 12 cities, monthly savings, roadmap checklist, insider tips.
+{your_link}
+   ```
+
+9. ```
+Nomad app for sale. One time $49.
+compare 12 cities, monthly savings, roadmap checklist, insider tips.
+Built in TypeScript, runs anywhere.
+{your_link}
+   ```
+
+10. ```
+Tired of "relocation apps" that just want your subscription?
+This one is yours forever for $49.
+Source code included.
+{your_link}
+    ```
+
+---
+
+## Reddit (5 posts)
+
+### r/SideProject
+
+```
+Title: I bought a Next.js relocation app template and reskinned it in a weekend
+
+Spent $49 on this Nomad template — full source. compare 12 cities, monthly savings, roadmap checklist, insider tips. Runs entirely in localStorage, no backend.
+
+Used it as the base for my own relocation side project. Took 2 evenings to rebrand. Already getting paying users.
+
+Link: {your_link}
+```
+
+### r/digitalnomad
+
+```
+Title: $49 one-time SaaS templates instead of building from scratch
+
+Just used "Nomad" — relocation app template. compare 12 cities, monthly savings, roadmap checklist, insider tips. Full Next.js source code, no subscription on the template itself, no monthly fees.
+
+Way faster than starting from a Figma file. Anyone else using template marketplaces to ship faster?
+
+{your_link}
+```
+
+### r/expats
+
+```
+Title: Relocation app template (Next.js + TS) — $49 one-time
+
+Sharing because it saved me a week:
+- 12 cities with cost-of-living, taxes, visa, internet, climate data
+- Side-by-side comparison with monthly savings calc
+- Quality of life snapshot (safety, healthcare, nightlife, outdoors)
+- 28-task relocation roadmap
+- 15+ insider tips from real movers
+- Full TypeScript source
+
+Clean code, zero dependencies on weird APIs. localStorage only.
+
+{your_link}
+```
+
+### r/IWantOut
+
+```
+Title: Bought a $49 relocation app template, charging $5/mo subscriptions
+
+Found this template, modified it for paid users, set up Stripe. ~30 customers in 2 weeks. The template paid for itself in 4 sales.
+
+Anyone else flipping these one-time templates into recurring SaaS?
+
+{your_link}
+```
+
+### Niche subs
+
+```
+Title: One-time $49 relocation app — anyone tried building service with it?
+
+Found this Next.js template — compare 12 cities, monthly savings, roadmap checklist, insider tips. $49 one-time, no subscription.
+
+Curious if anyone has launched a paid relocation service using a template like this.
+
+{your_link}
+```
+
+---
+
+## Telegram / Discord DM (3 templates)
+
+### Cold DM #1
+```
+Hey — saw you're into [relocation / indie dev / passive income].
+
+Found a $49 one-time Next.js relocation app template. compare 12 cities, monthly savings, roadmap checklist, insider tips. Full source code.
+
+Could be a good base for your own thing. {your_link}
+```
+
+### Cold DM #2
+```
+Quick one — I get 50% commission if you grab this $49 relocation template via my link, so I'm sharing widely.
+
+It's actually solid: compare 12 cities, monthly savings, roadmap checklist, insider tips. TypeScript Next.js, deploys on Vercel.
+
+{your_link}
+```
+
+### Repost in groups
+```
+For anyone building relocation side projects:
+
+Nomad template — $49 one-time, no subscription
+compare 12 cities, monthly savings, roadmap checklist, insider tips
+Full Next.js source
+
+{your_link}
+```
+
+---
+
+## TikTok / Reels script (30s)
+
+```
+[Hook 0-3s]
+"Stop opening 5 tabs to plan a move."
+
+[3-10s]
+"Nomad: pick your current city + destination, get a full comparison."
+
+[10-20s]
+"Cost diff, monthly savings, internet speed, sunshine days, digital nomad visa info."
+
+[20-27s]
+"Relocation roadmap with 28 tasks. Real insights from people who already moved."
+
+[27-30s — CTA]
+"$49 one-time. Link in bio."
+```
+
+---
+
+## Hashtags
+
+```
+#digitalnomad #relocation #expat #indiedev #nextjs #saas #sidehustle #webdev #typescript #onetimepurchase #movingabroad #remotelife
+```
+
+---
+
+## Where to post (priority order)
+
+1. **TikTok** — record screen, post 1/day
+2. **Reddit** — r/SideProject, r/digitalnomad, r/expats, r/IWantOut
+3. **Twitter/X** — thread + reply under relocation accounts
+4. **Telegram** — relocation channels, indie hacker channels
+5. **Instagram** — niche meme accounts (DM offer)
+6. **Pinterest** — pin a screenshot, link to your URL
+7. **Facebook** — relocation groups, indie hacker groups
+
