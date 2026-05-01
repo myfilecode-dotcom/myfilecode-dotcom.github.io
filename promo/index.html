@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Affiliate Promo Kits — MyFile</title>
+<meta name="description" content="Download promo kits (screenshots + ready-made post templates) for 81 Next.js app templates. Earn 50% per sale.">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #0d1117; color: #e6edf3; font-family: -apple-system, 'Inter', sans-serif; line-height: 1.5; }
+  a { color: #58a6ff; text-decoration: none; }
+
+  .hero { padding: 80px 24px 24px; text-align: center; max-width: 720px; margin: 0 auto; }
+  .hero h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; letter-spacing: -0.03em; }
+  .hero h1 span { color: #58a6ff; }
+  .hero p { margin-top: 16px; color: #8b949e; font-size: 1.05rem; }
+
+  .top-link { display: inline-flex; align-items: center; gap: 6px; margin-bottom: 24px; color: #8b949e; font-size: 0.85rem; }
+  .top-link:hover { color: #58a6ff; }
+
+  .stat-row { display: flex; justify-content: center; gap: 12px; margin: 24px 0 32px; flex-wrap: wrap; }
+  .stat { background: #161b22; border: 1px solid #30363d; padding: 10px 18px; border-radius: 999px; font-size: 0.88rem; color: #e6edf3; }
+  .stat b { color: #58a6ff; }
+
+  .cta-row { display: flex; justify-content: center; gap: 12px; margin-bottom: 16px; }
+  .cta { padding: 12px 22px; background: #1f6feb; color: #fff; border-radius: 8px; font-size: 0.92rem; font-weight: 600; transition: background 0.15s; }
+  .cta:hover { background: #388bfd; }
+  .cta.secondary { background: #21262d; color: #e6edf3; }
+  .cta.secondary:hover { background: #30363d; }
+
+  .search-wrap { display: flex; justify-content: center; padding: 0 24px 32px; max-width: 1200px; margin: 0 auto; }
+  .search { width: 100%; max-width: 480px; padding: 12px 16px 12px 44px; background: #161b22; border: 1px solid #30363d; border-radius: 10px; color: #e6edf3; font-size: 0.95rem; outline: none; transition: border-color 0.15s; background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%238b949e' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='11' cy='11' r='8'/><path d='m21 21-4.35-4.35'/></svg>"); background-repeat: no-repeat; background-position: 16px center; }
+  .search:focus { border-color: #58a6ff; }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; padding: 0 24px 80px; max-width: 1200px; margin: 0 auto; }
+  .card { background: #161b22; border: 1px solid #30363d; border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; transition: border-color 0.15s, transform 0.15s; }
+  .card:hover { border-color: #58a6ff; transform: translateY(-2px); }
+  .thumb { aspect-ratio: 16 / 10; background: #0d1117; overflow: hidden; }
+  .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .body { padding: 16px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+  .name { font-size: 1.05rem; font-weight: 700; color: #e6edf3; text-transform: capitalize; }
+  .tagline { font-size: 0.85rem; color: #8b949e; flex: 1; }
+  .meta { display: flex; align-items: center; justify-content: space-between; font-size: 0.78rem; color: #6e7681; padding-top: 4px; }
+  .price { color: #e6edf3; font-weight: 700; }
+  .actions { display: flex; gap: 8px; padding: 0 16px 16px; }
+  .btn { flex: 1; text-align: center; padding: 8px 12px; border-radius: 8px; font-size: 0.82rem; font-weight: 600; transition: all 0.15s; }
+  .btn.open { background: #21262d; color: #e6edf3; border: 1px solid #30363d; }
+  .btn.open:hover { background: #30363d; }
+  .btn.dl { background: #238636; color: #fff; }
+  .btn.dl:hover { background: #2ea44f; }
+  .empty-state { text-align: center; color: #8b949e; padding: 48px 24px; font-size: 0.95rem; grid-column: 1/-1; }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <a href="/products/" class="top-link">← Back to products</a>
+  <h1>Affiliate <span>Promo Kits</span></h1>
+  <p>Pick any app. Download screenshots + ready-to-post templates. Earn 50% per sale.</p>
+  <div class="stat-row">
+    <span class="stat"><b>81</b> apps</span>
+    <span class="stat"><b>240+</b> screenshots</span>
+    <span class="stat"><b>50%</b> commission</span>
+  </div>
+  <div class="cta-row">
+    <a class="cta" href="https://whop.com/myfileapps/affiliates" target="_blank" rel="noopener">Become an affiliate →</a>
+    <a class="cta secondary" href="/partners/">How it works</a>
+  </div>
+</div>
+
+<div class="search-wrap">
+  <input type="text" class="search" id="search" placeholder="Search by name or feature..." />
+</div>
+
+<div class="grid" id="grid"></div>
+
+<script>
+const apps = [{"id": "alumni", "name": "Alumni", "tagline": "Alumni network with mentor matching and integrated job board", "price": 29, "first_png": "home.png"}, {"id": "astro", "name": "Astro", "tagline": "Birth chart, compatibility scorer, and lunar journal", "price": 19, "first_png": "chart.png"}, {"id": "baby", "name": "Baby", "tagline": "Compare and shortlist 162 baby names with last-name compatibility", "price": 29, "first_png": "compare.png"}, {"id": "blocks", "name": "Blocks", "tagline": "Time-blocking planner with 30-min slots, categories, and templates", "price": 29, "first_png": "home.png"}, {"id": "book", "name": "Book", "tagline": "Self-hosted booking system, a true Calendly alternative", "price": 49, "first_png": "dashboard.png"}, {"id": "booking", "name": "Booking", "tagline": "Appointment scheduler with smart slot generator and intake forms", "price": 39, "first_png": "bookings.png"}, {"id": "boutique", "name": "Boutique", "tagline": "Brand directory with tiered listings, profiles, and filters", "price": 59, "first_png": "brand.png"}, {"id": "breed", "name": "Breed", "tagline": "Pet services directory and per-pet health record manager", "price": 49, "first_png": "home.png"}, {"id": "brief", "name": "Brief", "tagline": "Client photo gallery portal with favoriting and print ordering", "price": 49, "first_png": "client.png"}, {"id": "budget", "name": "Budget", "tagline": "Zero-based budget planner with charts, goals, and CSV export", "price": 29, "first_png": "home.png"}, {"id": "capital", "name": "Capital", "tagline": "Investor directory and outreach CRM with kanban pipeline", "price": 59, "first_png": "home.png"}, {"id": "card", "name": "Card", "tagline": "Digital business card with QR code, vCard export, and themes", "price": 19, "first_png": "export.png"}, {"id": "cellar", "name": "Cellar", "tagline": "Wine and spirits tracker with portfolio value and tasting notes", "price": 39, "first_png": "add.png"}, {"id": "cert", "name": "Cert", "tagline": "Bulk certificate generator with batch issuance and verification URLs", "price": 49, "first_png": "cert.png"}, {"id": "changelog", "name": "Changelog", "tagline": "Public changelog and voteable roadmap builder, fully white-labeled", "price": 39, "first_png": "admin.png"}, {"id": "coach", "name": "Coach", "tagline": "Client management system for coaches with sessions and goals", "price": 39, "first_png": "home.png"}, {"id": "compass", "name": "Compass", "tagline": "Interior moodboard builder with drag-drop canvas and budget tracker", "price": 29, "first_png": "home.png"}, {"id": "comply", "name": "Comply", "tagline": "Legal doc generator with GDPR and multi-jurisdiction templates", "price": 39, "first_png": "doc-types.png"}, {"id": "countdown", "name": "Countdown", "tagline": "Shareable countdown pages with flip animations and themes", "price": 19, "first_png": "countdown-public.png"}, {"id": "crm", "name": "FreelanceCRM", "tagline": "Lightweight CRM for solo freelancers with deals and follow-ups", "price": 49, "first_png": "contact-detail.png"}, {"id": "day", "name": "Day", "tagline": "One-paragraph daily journal with streaks and on-this-day recall", "price": 15, "first_png": "archive.png"}, {"id": "deal", "name": "Deal", "tagline": "Sales pipeline tracker with kanban, activity log, and analytics", "price": 29, "first_png": "analytics.png"}, {"id": "dir", "name": "Dir", "tagline": "AI tool directory builder in Product Hunt style with voting", "price": 49, "first_png": "admin.png"}, {"id": "dose", "name": "Dose", "tagline": "Medication tracker with pill icons, streaks, and adherence heatmap", "price": 29, "first_png": "history.png"}, {"id": "estate", "name": "Estate", "tagline": "Real estate listing manager with lead CRM and open houses", "price": 59, "first_png": "home.png"}, {"id": "event", "name": "Event", "tagline": "Event planning OS with checklist, budget, vendors, and guests", "price": 29, "first_png": "event-checklist.png"}, {"id": "faq", "name": "FAQ", "tagline": "Embeddable FAQ widget builder, self-hosted with multi-projects", "price": 19, "first_png": "editor.png"}, {"id": "feedback", "name": "Feedback", "tagline": "Self-hosted feature request board, a free Canny alternative", "price": 49, "first_png": "admin.png"}, {"id": "fit", "name": "Fit", "tagline": "AI resume tailor with ATS scoring, cover letters, and job tracker", "price": 39, "first_png": "home.png"}, {"id": "flow", "name": "Flow", "tagline": "Anonymous journal and social confession feed with reactions", "price": 29, "first_png": "home.png"}, {"id": "fomo", "name": "Fomo", "tagline": "Social proof notification widget builder with live preview", "price": 49, "first_png": "home.png"}, {"id": "forge", "name": "Forge", "tagline": "Sleep tracker with factor correlation, charts, and trends", "price": 29, "first_png": "home.png"}, {"id": "forum", "name": "Forum", "tagline": "Minimal community board with nested replies and upvoting", "price": 39, "first_png": "category.png"}, {"id": "garden", "name": "Garden", "tagline": "Plant care tracker with 65+ database, watering, and care log", "price": 19, "first_png": "add.png"}, {"id": "gift", "name": "Gift", "tagline": "Recommendation engine with occasion countdown and budget tracker", "price": 19, "first_png": "find.png"}, {"id": "gig", "name": "Gig", "tagline": "Proposal builder with client acceptance and auto-created projects", "price": 29, "first_png": "home.png"}, {"id": "goals", "name": "Goals", "tagline": "Annual goal tracker with milestones, subtasks, and year review", "price": 25, "first_png": "add.png"}, {"id": "invite", "name": "Invite", "tagline": "Wedding invitation builder with 5 themes, RSVP, and registry", "price": 29, "first_png": "home.png"}, {"id": "jobs", "name": "Jobs", "tagline": "Niche job board, production-ready with admin and applications", "price": 39, "first_png": "admin.png"}, {"id": "ledger", "name": "Ledger", "tagline": "Invoice generator with live preview and payment tracking", "price": 29, "first_png": "clients.png"}, {"id": "lens", "name": "Lens", "tagline": "Content calendar with multi-platform post composer and previews", "price": 29, "first_png": "compose.png"}, {"id": "letter", "name": "Letter", "tagline": "Self-hosted newsletter platform with subscriber stats and tiers", "price": 39, "first_png": "home.png"}, {"id": "link", "name": "Link", "tagline": "Bio page builder with live preview, themes, and click analytics", "price": 29, "first_png": "home.png"}, {"id": "match", "name": "Match", "tagline": "Musician discovery platform with filters, profiles, and saves", "price": 39, "first_png": "home.png"}, {"id": "meme", "name": "Meme", "tagline": "Browser meme generator with 12 templates, uploads, and library", "price": 19, "first_png": "home.png"}, {"id": "mentor", "name": "Mentor", "tagline": "Mentorship program manager for coaches, mentees, and goals", "price": 39, "first_png": "home.png"}, {"id": "menu", "name": "Menu", "tagline": "Digital restaurant menu with QR code, dietary tags, and filters", "price": 29, "first_png": "home.png"}, {"id": "metric", "name": "Metric", "tagline": "SaaS metrics dashboard with MRR, churn, LTV, and runway", "price": 39, "first_png": "history.png"}, {"id": "nomad", "name": "Nomad", "tagline": "Relocation tool with city comparison, roadmap, and insider tips", "price": 49, "first_png": "compare.png"}, {"id": "ogcard", "name": "OGCard", "tagline": "Social card and OG image generator with 12 templates and PNG export", "price": 19, "first_png": "editor.png"}, {"id": "okr", "name": "OKR", "tagline": "Quarterly goals tracker with dual-ring visualization and confidence", "price": 39, "first_png": "history.png"}, {"id": "palette", "name": "Palette", "tagline": "Brand color studio from one hex to a full design system", "price": 19, "first_png": "accessibility.png"}, {"id": "peak", "name": "Peak", "tagline": "Accountability tracker with daily check-ins, goals, and reflections", "price": 39, "first_png": "checkin.png"}, {"id": "pet", "name": "Pet", "tagline": "Multi-pet health tracker with alerts, records, and weight charts", "price": 29, "first_png": "add.png"}, {"id": "pitch", "name": "Pitch", "tagline": "Pitch deck builder for founders with themes and presentation mode", "price": 29, "first_png": "deck.png"}, {"id": "portal", "name": "Portal", "tagline": "Client workspace with projects, CRM, files, and messaging", "price": 49, "first_png": "clients.png"}, {"id": "privacy", "name": "Privacy", "tagline": "Legal doc generator with GDPR, cookie banner, and ToS", "price": 29, "first_png": "doc.png"}, {"id": "pulse", "name": "Pulse", "tagline": "Mental wellness companion with check-ins, CBT tools, and insights", "price": 19, "first_png": "exercises.png"}, {"id": "quiz", "name": "Quiz", "tagline": "Personality quiz builder with weighted scoring and public sharing", "price": 39, "first_png": "edit.png"}, {"id": "recipe", "name": "Recipe", "tagline": "Recipe vault with serving scaler, cooking mode, and meal planner", "price": 19, "first_png": "home.png"}, {"id": "repurpose", "name": "Repurpose", "tagline": "Turn blog posts into 8 ready-to-publish content formats", "price": 29, "first_png": "home.png"}, {"id": "resume", "name": "Resume", "tagline": "Resume builder with live A4 preview, templates, and PDF export", "price": 19, "first_png": "builder.png"}, {"id": "retreat", "name": "Retreat", "tagline": "Curated wellness retreat discovery across 14 countries and 9 categories", "price": 39, "first_png": "home.png"}, {"id": "retro", "name": "Retro", "tagline": "Sprint retrospective board with voting, action items, and history", "price": 29, "first_png": "actions.png"}, {"id": "rings", "name": "Rings", "tagline": "Wedding planner with countdown, checklist, and budget tracking", "price": 24, "first_png": "budget.png"}, {"id": "roast", "name": "Roast", "tagline": "40-point landing page audit with letter grades and actionable fixes", "price": 19, "first_png": "home.png"}, {"id": "shout", "name": "Shout", "tagline": "Collect and display testimonials with moderation, no monthly fees", "price": 39, "first_png": "home.png"}, {"id": "signal", "name": "Signal", "tagline": "Testimonial collection with approval workflow and 4 embeddable layouts", "price": 34, "first_png": "collection.png"}, {"id": "stack", "name": "Stack", "tagline": "Dev portfolio builder with split-pane editor and public URL", "price": 19, "first_png": "home.png"}, {"id": "status", "name": "Status", "tagline": "Self-hosted status page with 90-day uptime bars and incidents", "price": 29, "first_png": "admin.png"}, {"id": "store", "name": "Store", "tagline": "Digital product storefront with revenue dashboard and categories", "price": 24, "first_png": "admin.png"}, {"id": "studio", "name": "Studio", "tagline": "Fitness studio OS with schedule, member CRM, and check-ins", "price": 39, "first_png": "home.png"}, {"id": "study", "name": "Study", "tagline": "Flashcard app with SM-2 spaced repetition and review heatmap", "price": 29, "first_png": "home.png"}, {"id": "tarot", "name": "Tarot", "tagline": "Atmospheric tarot readings with 5 spreads and flip animations", "price": 17, "first_png": "cards.png"}, {"id": "thread", "name": "Thread", "tagline": "Turn any article into a Twitter thread with 4 writing styles", "price": 19, "first_png": "generate.png"}, {"id": "ticks", "name": "Ticks", "tagline": "Habit tracker with GitHub-style contribution grids and streaks", "price": 17, "first_png": "habits.png"}, {"id": "tips", "name": "Tips", "tagline": "Creator support page with confetti, supporters wall, and analytics", "price": 22, "first_png": "edit.png"}, {"id": "tome", "name": "Tome", "tagline": "Visual bookshelf with reading progress, quotes, and stats", "price": 24, "first_png": "home.png"}, {"id": "vault", "name": "Vault", "tagline": "Digital legacy app with dead man's switch and beneficiaries", "price": 29, "first_png": "home.png"}, {"id": "vision", "name": "Vision", "tagline": "Vision board with OKR framework, 365-day grid, and journals", "price": 29, "first_png": "board.png"}, {"id": "waitlist", "name": "Waitlist", "tagline": "Self-hosted waitlist with viral referral mechanics and leaderboard", "price": 27, "first_png": "entries.png"}];
+let q = '';
+
+function render() {
+  const filtered = q
+    ? apps.filter(a => a.name.toLowerCase().includes(q) || a.tagline.toLowerCase().includes(q))
+    : apps;
+  const grid = document.getElementById('grid');
+  if (filtered.length === 0) {
+    grid.innerHTML = `<div class="empty-state">No kits match "${q}". Try another search.</div>`;
+    return;
+  }
+  grid.innerHTML = filtered.map(a => `
+    <div class="card">
+      <a href="/promo/${a.id}/" class="thumb"><img src="/promo/${a.id}/${a.first_png}" alt="${a.name} preview" loading="lazy" /></a>
+      <div class="body">
+        <div class="name">${a.name}</div>
+        <div class="tagline">${a.tagline}</div>
+        <div class="meta">
+          <span class="price">$${a.price}</span>
+          <span>~$${(a.price * 0.5).toFixed(2)} per sale</span>
+        </div>
+      </div>
+      <div class="actions">
+        <a class="btn open" href="/promo/${a.id}/">Open kit</a>
+        <a class="btn dl" href="/promo/zips/${a.id}-kit.zip" download>Download ZIP</a>
+      </div>
+    </div>
+  `).join('');
+}
+
+document.getElementById('search').addEventListener('input', e => { q = e.target.value.trim().toLowerCase(); render(); });
+render();
+</script>
+</body>
+</html>
