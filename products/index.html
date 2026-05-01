@@ -36,7 +36,7 @@
   .card-body { padding: 16px 18px 18px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
   .card-name { font-size: 1.05rem; font-weight: 700; text-transform: capitalize; }
   .card-tag { font-size: 0.74rem; color: #6e7681; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px; }
-  .card-desc { font-size: 0.875rem; color: #8b949e; line-height: 1.5; flex: 1; }
+  .card-desc { font-size: 0.875rem; color: #8b949e; line-height: 1.5; flex: 1; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
   .card-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 4px; }
   .price { font-size: 1.2rem; font-weight: 800; color: #e6edf3; }
   .buy-btn { padding: 8px 18px; background: #238636; color: #fff; border: none; border-radius: 8px; font-size: 0.85rem; font-weight: 600; cursor: pointer; transition: background 0.15s; text-decoration: none; display: inline-block; }
@@ -132,7 +132,7 @@ const products = [
 {
 "id": "alumni",
 "name": "Alumni",
-"tagline": "Alumni network with mentor matching and integrated job board",
+"tagline": "Alumni network platform with mentor matching, integrated job board, member profiles, and direct messaging — built for university and bootcamp communities.",
 "price": 29,
 "whop": "https://whop.com/myfileapps/alumni-app",
 "tags": [
@@ -145,7 +145,7 @@ const products = [
 {
 "id": "astro",
 "name": "Astro",
-"tagline": "Birth chart, compatibility scorer, and lunar journal",
+"tagline": "Personal astrology suite with birth chart generator, partner compatibility scoring, lunar journaling, and daily transit tracking for astro-curious users.",
 "price": 19,
 "whop": "https://whop.com/myfileapps/astro-ed",
 "tags": [
@@ -158,7 +158,7 @@ const products = [
 {
 "id": "baby",
 "name": "Baby",
-"tagline": "Compare and shortlist 162 baby names with last-name compatibility",
+"tagline": "Browse 162 curated baby names, compare side-by-side with last-name compatibility scoring, and build a private shortlist for both parents.",
 "price": 29,
 "whop": "https://whop.com/myfileapps/baby-cc",
 "tags": [
@@ -171,7 +171,7 @@ const products = [
 {
 "id": "blocks",
 "name": "Blocks",
-"tagline": "Time-blocking planner with 30-min slots, categories, and templates",
+"tagline": "Time-blocking planner with 30-minute slots, color-coded categories, reusable day templates, and a clean week view for deep-work scheduling.",
 "price": 29,
 "whop": "",
 "tags": [
@@ -184,7 +184,7 @@ const products = [
 {
 "id": "book",
 "name": "Book",
-"tagline": "Self-hosted booking system, a true Calendly alternative",
+"tagline": "Self-hosted booking system as a Calendly alternative — public booking pages, calendar dashboard, service management, and buffer rules engine.",
 "price": 49,
 "whop": "",
 "tags": [
@@ -197,7 +197,7 @@ const products = [
 {
 "id": "booking",
 "name": "Booking",
-"tagline": "Appointment scheduler with smart slot generator and intake forms",
+"tagline": "Appointment scheduler with smart slot generation, customizable intake forms, service catalog, CSV export, and a streamlined confirmation flow.",
 "price": 39,
 "whop": "",
 "tags": [
@@ -210,7 +210,7 @@ const products = [
 {
 "id": "boutique",
 "name": "Boutique",
-"tagline": "Brand directory with tiered listings, profiles, and filters",
+"tagline": "Curated brand directory with tiered listings, rich brand profiles, advanced filters, and bookmarking — ideal for fashion or local-business marketplaces.",
 "price": 59,
 "whop": "",
 "tags": [
@@ -223,7 +223,7 @@ const products = [
 {
 "id": "breed",
 "name": "Breed",
-"tagline": "Pet services directory and per-pet health record manager",
+"tagline": "Pet services directory paired with a per-pet health record manager — vet bookmarks, vaccination logs, and breed-specific care guides.",
 "price": 49,
 "whop": "",
 "tags": [
@@ -236,7 +236,7 @@ const products = [
 {
 "id": "brief",
 "name": "Brief",
-"tagline": "Client photo gallery portal with favoriting and print ordering",
+"tagline": "Photographer's client portal with private galleries, favorite-marking, print ordering, and a unified dashboard — built for wedding and portrait shoots.",
 "price": 49,
 "whop": "",
 "tags": [
@@ -249,7 +249,7 @@ const products = [
 {
 "id": "budget",
 "name": "Budget",
-"tagline": "Zero-based budget planner with charts, goals, and CSV export",
+"tagline": "Zero-based budget planner with category breakdowns, savings goals, visual insight charts, transaction logs, and one-click CSV export.",
 "price": 29,
 "whop": "",
 "tags": [
@@ -262,7 +262,7 @@ const products = [
 {
 "id": "capital",
 "name": "Capital",
-"tagline": "Investor directory and outreach CRM with kanban pipeline",
+"tagline": "Investor directory and outreach CRM combined — kanban deal pipeline, contact filters, follow-up notes, and saved-search lists for fundraising.",
 "price": 59,
 "whop": "",
 "tags": [
@@ -275,7 +275,7 @@ const products = [
 {
 "id": "cellar",
 "name": "Cellar",
-"tagline": "Wine and spirits tracker with portfolio value and tasting notes",
+"tagline": "Wine and spirits cellar tracker with portfolio valuation, tasting notes, vintage ratings, and per-bottle history for serious collectors.",
 "price": 39,
 "whop": "",
 "tags": [
@@ -288,7 +288,7 @@ const products = [
 {
 "id": "cert",
 "name": "Cert",
-"tagline": "Bulk certificate generator with batch issuance and verification URLs",
+"tagline": "Bulk certificate generator with branded templates, batch issuance, public verification URLs, and signed PDFs — built for any team or course.",
 "price": 49,
 "whop": "",
 "tags": [
@@ -301,7 +301,7 @@ const products = [
 {
 "id": "changelog",
 "name": "Changelog",
-"tagline": "Public changelog and voteable roadmap builder, fully white-labeled",
+"tagline": "Public changelog plus voteable roadmap builder — fully white-labeled with RSS, version timeline, and admin controls for SaaS founders.",
 "price": 39,
 "whop": "",
 "tags": [
@@ -314,7 +314,7 @@ const products = [
 {
 "id": "coach",
 "name": "Coach",
-"tagline": "Client management system for coaches with sessions and goals",
+"tagline": "Client management system for coaches with session notes, goal tracking, weekly homework, check-in logs, and progress insights.",
 "price": 39,
 "whop": "",
 "tags": [
@@ -327,7 +327,7 @@ const products = [
 {
 "id": "compass",
 "name": "Compass",
-"tagline": "Interior moodboard builder with drag-drop canvas and budget tracker",
+"tagline": "Interior design moodboard builder with drag-drop canvas, shop-list budget tracker, image uploads, and shareable boards for designers and clients.",
 "price": 29,
 "whop": "",
 "tags": [
@@ -340,7 +340,7 @@ const products = [
 {
 "id": "comply",
 "name": "Comply",
-"tagline": "Legal doc generator with GDPR and multi-jurisdiction templates",
+"tagline": "Legal document generator with GDPR-ready templates, multi-jurisdiction wizard, version control, and downloadable contracts for startups and freelancers.",
 "price": 39,
 "whop": "",
 "tags": [
@@ -353,7 +353,7 @@ const products = [
 {
 "id": "countdown",
 "name": "Countdown",
-"tagline": "Shareable countdown pages with flip animations and themes",
+"tagline": "Shareable countdown pages with flip-clock animations, color themes, custom backgrounds, confetti finish, and embeddable widget code.",
 "price": 19,
 "whop": "",
 "tags": [
@@ -366,7 +366,7 @@ const products = [
 {
 "id": "crm",
 "name": "FreelanceCRM",
-"tagline": "Lightweight CRM for solo freelancers with deals and follow-ups",
+"tagline": "Lightweight CRM built for solo freelancers — deal pipeline, contact activity log, follow-up reminders, and clean dashboard. No bloat.",
 "price": 49,
 "whop": "",
 "tags": [
@@ -379,7 +379,7 @@ const products = [
 {
 "id": "day",
 "name": "Day",
-"tagline": "One-paragraph daily journal with streaks and on-this-day recall",
+"tagline": "One-paragraph daily journal with streak tracking, mood tagging, full-text search, year heatmap, and 'on this day' historical recall.",
 "price": 15,
 "whop": "",
 "tags": [
@@ -392,7 +392,7 @@ const products = [
 {
 "id": "deal",
 "name": "Deal",
-"tagline": "Sales pipeline tracker with kanban, activity log, and analytics",
+"tagline": "Sales pipeline tracker with drag-drop kanban, deal activity log, revenue analytics, and stage forecasts — built for solo sellers and small teams.",
 "price": 29,
 "whop": "",
 "tags": [
@@ -405,7 +405,7 @@ const products = [
 {
 "id": "dir",
 "name": "Dir",
-"tagline": "AI tool directory builder in Product Hunt style with voting",
+"tagline": "AI tool directory builder in Product Hunt style — listings, upvoting, user submissions, admin moderation, and full taxonomy support.",
 "price": 49,
 "whop": "",
 "tags": [
@@ -418,7 +418,7 @@ const products = [
 {
 "id": "dose",
 "name": "Dose",
-"tagline": "Medication tracker with pill icons, streaks, and adherence heatmap",
+"tagline": "Medication tracker with pill icons, dosing schedules, adherence heatmap, refill reminders, and history log for chronic-care patients.",
 "price": 29,
 "whop": "",
 "tags": [
@@ -431,7 +431,7 @@ const products = [
 {
 "id": "estate",
 "name": "Estate",
-"tagline": "Real estate listing manager with lead CRM and open houses",
+"tagline": "Real estate listing manager with photo galleries, lead CRM, agent profiles, open-house scheduler, and pipeline tracking — agency-ready.",
 "price": 59,
 "whop": "",
 "tags": [
@@ -444,7 +444,7 @@ const products = [
 {
 "id": "event",
 "name": "Event",
-"tagline": "Event planning OS with checklist, budget, vendors, and guests",
+"tagline": "Event planning OS combining a checklist, budget tracker, vendor directory, RSVP guest list, and timeline overview in one workspace.",
 "price": 29,
 "whop": "",
 "tags": [
@@ -457,7 +457,7 @@ const products = [
 {
 "id": "faq",
 "name": "FAQ",
-"tagline": "Embeddable FAQ widget builder, self-hosted with multi-projects",
+"tagline": "Embeddable FAQ widget builder with categories, search, custom themes, multi-project support, and a single-line embed snippet — self-hosted.",
 "price": 19,
 "whop": "",
 "tags": [
@@ -470,7 +470,7 @@ const products = [
 {
 "id": "feedback",
 "name": "Feedback",
-"tagline": "Self-hosted feature request board, a free Canny alternative",
+"tagline": "Self-hosted feature request board as a free Canny alternative — voting, status updates, roadmap view, and admin moderation tools.",
 "price": 49,
 "whop": "",
 "tags": [
@@ -483,7 +483,7 @@ const products = [
 {
 "id": "fit",
 "name": "Fit",
-"tagline": "AI resume tailor with ATS scoring, cover letters, and job tracker",
+"tagline": "AI resume tailor with ATS scoring, generated cover letters, job application tracker, and interview prep notes for serious job seekers.",
 "price": 39,
 "whop": "",
 "tags": [
@@ -496,7 +496,7 @@ const products = [
 {
 "id": "flow",
 "name": "Flow",
-"tagline": "Anonymous journal and social confession feed with reactions",
+"tagline": "Anonymous journal and social confession feed with reactions, mood tags, saved posts, and a private writing mode for honest self-expression.",
 "price": 29,
 "whop": "",
 "tags": [
@@ -509,7 +509,7 @@ const products = [
 {
 "id": "fomo",
 "name": "Fomo",
-"tagline": "Social proof notification widget builder with live preview",
+"tagline": "Social proof notification widget builder with live preview, ready-made templates, custom themes, and a one-line embed snippet for any site.",
 "price": 49,
 "whop": "",
 "tags": [
@@ -522,7 +522,7 @@ const products = [
 {
 "id": "forge",
 "name": "Forge",
-"tagline": "Sleep tracker with factor correlation, charts, and trends",
+"tagline": "Sleep tracker that correlates rest quality with daily factors — caffeine, stress, exercise — through visual charts and weekly trend insights.",
 "price": 29,
 "whop": "",
 "tags": [
@@ -535,7 +535,7 @@ const products = [
 {
 "id": "forum",
 "name": "Forum",
-"tagline": "Minimal community board with nested replies and upvoting",
+"tagline": "Minimal community forum with nested replies, upvoting, threaded categories, full-text search, and user reputation — clean and self-hosted.",
 "price": 39,
 "whop": "",
 "tags": [
@@ -548,7 +548,7 @@ const products = [
 {
 "id": "garden",
 "name": "Garden",
-"tagline": "Plant care tracker with 65+ database, watering, and care log",
+"tagline": "Plant care tracker with a 65+ species database, watering reminders, care log entries, and per-plant health monitoring for home gardeners.",
 "price": 19,
 "whop": "",
 "tags": [
@@ -561,7 +561,7 @@ const products = [
 {
 "id": "gift",
 "name": "Gift",
-"tagline": "Recommendation engine with occasion countdown and budget tracker",
+"tagline": "Gift recommendation engine with occasion countdowns, idea lists, budget tracker, and recipient profiles — never miss a birthday or anniversary.",
 "price": 19,
 "whop": "",
 "tags": [
@@ -574,7 +574,7 @@ const products = [
 {
 "id": "gig",
 "name": "Gig",
-"tagline": "Proposal builder with client acceptance and auto-created projects",
+"tagline": "Proposal builder for freelancers with branded templates, client acceptance flow, auto-created projects, and a clean pipeline overview.",
 "price": 29,
 "whop": "",
 "tags": [
@@ -587,7 +587,7 @@ const products = [
 {
 "id": "goals",
 "name": "Goals",
-"tagline": "Annual goal tracker with milestones, subtasks, and year review",
+"tagline": "Annual goal tracker with milestones, subtasks, category breakdowns, and a year-end review wizard to reflect on what worked and what didn't.",
 "price": 25,
 "whop": "",
 "tags": [
@@ -600,7 +600,7 @@ const products = [
 {
 "id": "invite",
 "name": "Invite",
-"tagline": "Wedding invitation builder with 5 themes, RSVP, and registry",
+"tagline": "Wedding invitation builder with five elegant themes, RSVP collection, schedule details, and integrated registry links — shareable on any link.",
 "price": 29,
 "whop": "",
 "tags": [
@@ -613,7 +613,7 @@ const products = [
 {
 "id": "jobs",
 "name": "Jobs",
-"tagline": "Niche job board, production-ready with admin and applications",
+"tagline": "Niche job board ready for production — public listings, advanced filters, application capture, employer admin, and easy taxonomy customization.",
 "price": 39,
 "whop": "",
 "tags": [
@@ -626,7 +626,7 @@ const products = [
 {
 "id": "ledger",
 "name": "Ledger",
-"tagline": "Invoice generator with live preview and payment tracking",
+"tagline": "Invoice generator with live preview, multi-currency support, client management, payment tracking, and PDF export — invoice clients in minutes.",
 "price": 29,
 "whop": "https://whop.com/myfileapps/ledger-3f",
 "tags": [
@@ -639,7 +639,7 @@ const products = [
 {
 "id": "lens",
 "name": "Lens",
-"tagline": "Content calendar with multi-platform post composer and previews",
+"tagline": "Content calendar with a multi-platform post composer, scheduled drafts, status tracking, and live previews for Twitter, Instagram, and LinkedIn.",
 "price": 29,
 "whop": "",
 "tags": [
@@ -652,7 +652,7 @@ const products = [
 {
 "id": "letter",
 "name": "Letter",
-"tagline": "Self-hosted newsletter platform with subscriber stats and tiers",
+"tagline": "Self-hosted newsletter platform with rich editor, subscriber stats, growth charts, paid tiers, and issue scheduling — own your audience.",
 "price": 39,
 "whop": "",
 "tags": [
@@ -665,7 +665,7 @@ const products = [
 {
 "id": "link",
 "name": "Link",
-"tagline": "Bio page builder with live preview, themes, and click analytics",
+"tagline": "Bio page builder as a Linktree alternative — live preview, custom themes, social links, and per-link click analytics. No subscription.",
 "price": 29,
 "whop": "",
 "tags": [
@@ -678,7 +678,7 @@ const products = [
 {
 "id": "match",
 "name": "Match",
-"tagline": "Musician discovery platform with filters, profiles, and saves",
+"tagline": "Musician discovery platform with rich profiles, instrument and genre filters, saved-artist lists, and direct contact — for bands and producers.",
 "price": 39,
 "whop": "",
 "tags": [
@@ -691,7 +691,7 @@ const products = [
 {
 "id": "meme",
 "name": "Meme",
-"tagline": "Browser meme generator with 12 templates, uploads, and library",
+"tagline": "In-browser meme generator with 12 built-in templates, custom image uploads, multi-line captions, and a saved-meme library — no signup.",
 "price": 19,
 "whop": "",
 "tags": [
@@ -704,7 +704,7 @@ const products = [
 {
 "id": "mentor",
 "name": "Mentor",
-"tagline": "Mentorship program manager for coaches, mentees, and goals",
+"tagline": "Mentorship program manager for coaches and mentees — session scheduling, shared goals, resource library, and progress notes in one place.",
 "price": 39,
 "whop": "",
 "tags": [
@@ -717,7 +717,7 @@ const products = [
 {
 "id": "menu",
 "name": "Menu",
-"tagline": "Digital restaurant menu with QR code, dietary tags, and filters",
+"tagline": "Digital restaurant menu with QR code generation, dietary tags, category filters, photos, and a public ordering-friendly view for diners.",
 "price": 29,
 "whop": "",
 "tags": [
@@ -730,7 +730,7 @@ const products = [
 {
 "id": "metric",
 "name": "Metric",
-"tagline": "SaaS metrics dashboard with MRR, churn, LTV, and runway",
+"tagline": "SaaS metrics dashboard tracking MRR, churn, LTV, runway, and growth goals — historical charts and goal-setting for indie founders.",
 "price": 39,
 "whop": "",
 "tags": [
@@ -743,7 +743,7 @@ const products = [
 {
 "id": "nomad",
 "name": "Nomad",
-"tagline": "Relocation tool with city comparison, roadmap, and insider tips",
+"tagline": "Relocation planning tool with side-by-side city comparison, cost-of-living data, move roadmap, and insider tips — ideal for digital nomads.",
 "price": 49,
 "whop": "",
 "tags": [
@@ -756,7 +756,7 @@ const products = [
 {
 "id": "ogcard",
 "name": "OGCard",
-"tagline": "Social card and OG image generator with 12 templates and PNG export",
+"tagline": "Social card and Open Graph image generator with 12 templates, gradient backgrounds, logo upload, and instant high-res PNG export.",
 "price": 19,
 "whop": "",
 "tags": [
@@ -769,7 +769,7 @@ const products = [
 {
 "id": "okr",
 "name": "OKR",
-"tagline": "Quarterly goals tracker with dual-ring visualization and confidence",
+"tagline": "Quarterly OKR tracker with dual-ring progress visualization, confidence scores, key result updates, and weekly check-in history.",
 "price": 39,
 "whop": "",
 "tags": [
@@ -782,7 +782,7 @@ const products = [
 {
 "id": "palette",
 "name": "Palette",
-"tagline": "Brand color studio from one hex to a full design system",
+"tagline": "Brand color studio that turns one hex code into a full design system — scales, harmonies, contrast checks, and code export.",
 "price": 19,
 "whop": "",
 "tags": [
@@ -795,7 +795,7 @@ const products = [
 {
 "id": "peak",
 "name": "Peak",
-"tagline": "Accountability tracker with daily check-ins, goals, and reflections",
+"tagline": "Accountability tracker with daily check-ins, goal milestones, streak tracking, weekly reflections, and a clean history view to stay consistent.",
 "price": 39,
 "whop": "",
 "tags": [
@@ -808,7 +808,7 @@ const products = [
 {
 "id": "pet",
 "name": "Pet",
-"tagline": "Multi-pet health tracker with alerts, records, and weight charts",
+"tagline": "Multi-pet health tracker with vet records, medication alerts, vaccination history, and weight charts — one home for every pet's data.",
 "price": 29,
 "whop": "",
 "tags": [
@@ -821,7 +821,7 @@ const products = [
 {
 "id": "pitch",
 "name": "Pitch",
-"tagline": "Pitch deck builder for founders with themes and presentation mode",
+"tagline": "Pitch deck builder for founders with elegant themes, slide editor, presenter notes, and full-screen present mode — no PowerPoint needed.",
 "price": 29,
 "whop": "",
 "tags": [
@@ -834,7 +834,7 @@ const products = [
 {
 "id": "portal",
 "name": "Portal",
-"tagline": "Client workspace with projects, CRM, files, and messaging",
+"tagline": "Client workspace combining projects, milestones, file sharing, messaging, and a CRM-style client roster — give every client their own portal.",
 "price": 49,
 "whop": "",
 "tags": [
@@ -847,7 +847,7 @@ const products = [
 {
 "id": "privacy",
 "name": "Privacy",
-"tagline": "Legal doc generator with GDPR, cookie banner, and ToS",
+"tagline": "Legal doc generator covering GDPR privacy policy, cookie banner, and Terms of Service via a guided wizard — compliant and exportable.",
 "price": 29,
 "whop": "",
 "tags": [
@@ -860,7 +860,7 @@ const products = [
 {
 "id": "pulse",
 "name": "Pulse",
-"tagline": "Mental wellness companion with check-ins, CBT tools, and insights",
+"tagline": "Mental wellness companion with daily check-ins, CBT exercises, gratitude journal, mood tracking, and personalized insight summaries.",
 "price": 19,
 "whop": "https://whop.com/myfileapps/pulse-wellness/",
 "tags": [
@@ -873,7 +873,7 @@ const products = [
 {
 "id": "quiz",
 "name": "Quiz",
-"tagline": "Personality quiz builder with weighted scoring and public sharing",
+"tagline": "Personality quiz builder with weighted answer scoring, custom result archetypes, public shareable links, and a clean editor — Buzzfeed-style.",
 "price": 39,
 "whop": "",
 "tags": [
@@ -886,7 +886,7 @@ const products = [
 {
 "id": "recipe",
 "name": "Recipe",
-"tagline": "Recipe vault with serving scaler, cooking mode, and meal planner",
+"tagline": "Personal recipe vault with serving scaler, hands-free cooking mode, weekly meal planner, and auto-generated shopping list.",
 "price": 19,
 "whop": "",
 "tags": [
@@ -899,7 +899,7 @@ const products = [
 {
 "id": "repurpose",
 "name": "Repurpose",
-"tagline": "Turn blog posts into 8 ready-to-publish content formats",
+"tagline": "Turn one blog post into eight ready-to-publish formats — Twitter thread, LinkedIn post, newsletter, and more — with tone control.",
 "price": 29,
 "whop": "",
 "tags": [
@@ -912,7 +912,7 @@ const products = [
 {
 "id": "resume",
 "name": "Resume",
-"tagline": "Resume builder with live A4 preview, templates, and PDF export",
+"tagline": "Resume builder with live A4 preview, multiple templates, drag-reorder sections, and one-click PDF export — print-ready in minutes.",
 "price": 19,
 "whop": "",
 "tags": [
@@ -925,7 +925,7 @@ const products = [
 {
 "id": "retreat",
 "name": "Retreat",
-"tagline": "Curated wellness retreat discovery across 14 countries and 9 categories",
+"tagline": "Curated wellness retreat discovery across 14 countries and 9 categories — featured listings, category filters, favorites, and detailed retreat pages.",
 "price": 39,
 "whop": "",
 "tags": [
@@ -938,7 +938,7 @@ const products = [
 {
 "id": "retro",
 "name": "Retro",
-"tagline": "Sprint retrospective board with voting, action items, and history",
+"tagline": "Sprint retrospective board with sticky-note columns, dot voting, action items, retrospective archive, and exportable team summaries.",
 "price": 29,
 "whop": "",
 "tags": [
@@ -951,7 +951,7 @@ const products = [
 {
 "id": "rings",
 "name": "Rings",
-"tagline": "Wedding planner with countdown, checklist, and budget tracking",
+"tagline": "Wedding planner combining countdown timer, master checklist, budget tracker, and phase-based timeline — keep the big day organized in one place.",
 "price": 24,
 "whop": "https://whop.com/myfileapps/rings-wedding-planner",
 "tags": [
@@ -962,9 +962,7 @@ const products = [
 ]
 },
 {
-"id": "roast",
-"name": "Roast",
-"tagline": "40-point landing page audit with letter grades and actionable fixes",
+`-point landing page audit with letter grades, actionable fixes, full report export, and audit history — improve conversion in days.",
 "price": 19,
 "whop": "https://whop.com/myfileapps/roast-3a",
 "tags": [
@@ -977,7 +975,7 @@ const products = [
 {
 "id": "shout",
 "name": "Shout",
-"tagline": "Collect and display testimonials with moderation, no monthly fees",
+"tagline": "Collect and display customer testimonials with moderation, embeddable wall-of-love, request forms, and zero monthly fees — own your social proof.",
 "price": 39,
 "whop": "",
 "tags": [
@@ -990,7 +988,7 @@ const products = [
 {
 "id": "signal",
 "name": "Signal",
-"tagline": "Testimonial collection with approval workflow and 4 embeddable layouts",
+"tagline": "Testimonial collection with submission forms, approval workflow, four embeddable layouts, and collection management — for SaaS, agencies, creators.",
 "price": 34,
 "whop": "",
 "tags": [
@@ -1003,7 +1001,7 @@ const products = [
 {
 "id": "stack",
 "name": "Stack",
-"tagline": "Dev portfolio builder with split-pane editor and public URL",
+"tagline": "Developer portfolio builder with split-pane editor, project showcases, skills section, theme picker, and a public URL — deploy and impress.",
 "price": 19,
 "whop": "",
 "tags": [
@@ -1016,7 +1014,7 @@ const products = [
 {
 "id": "status",
 "name": "Status",
-"tagline": "Self-hosted status page with 90-day uptime bars and incidents",
+"tagline": "Self-hosted status page with 90-day uptime bars, incident timeline, maintenance windows, and email subscription — own your reliability story.",
 "price": 29,
 "whop": "",
 "tags": [
@@ -1029,7 +1027,7 @@ const products = [
 {
 "id": "store",
 "name": "Store",
-"tagline": "Digital product storefront with revenue dashboard and categories",
+"tagline": "Digital product storefront with revenue dashboard, product categories, customer reviews, and a clean checkout — built for indie sellers.",
 "price": 24,
 "whop": "",
 "tags": [
@@ -1042,7 +1040,7 @@ const products = [
 {
 "id": "studio",
 "name": "Studio",
-"tagline": "Fitness studio OS with schedule, member CRM, and check-ins",
+"tagline": "Fitness studio OS with class schedule, member CRM, attendance check-ins, and instructor management — one tool for boutique gyms.",
 "price": 39,
 "whop": "",
 "tags": [
@@ -1055,7 +1053,7 @@ const products = [
 {
 "id": "study",
 "name": "Study",
-"tagline": "Flashcard app with SM-2 spaced repetition and review heatmap",
+"tagline": "Flashcard study app with SM-2 spaced repetition, study heatmap, decks library, and review forecast — learn anything, retain everything.",
 "price": 29,
 "whop": "",
 "tags": [
@@ -1068,7 +1066,7 @@ const products = [
 {
 "id": "tarot",
 "name": "Tarot",
-"tagline": "Atmospheric tarot readings with 5 spreads and flip animations",
+"tagline": "Atmospheric tarot reader with five spreads, flip-card animations, full Major Arcana deck, and a personal reading journal.",
 "price": 17,
 "whop": "",
 "tags": [
@@ -1081,7 +1079,7 @@ const products = [
 {
 "id": "thread",
 "name": "Thread",
-"tagline": "Turn any article into a Twitter thread with 4 writing styles",
+"tagline": "Turn any article or doc into a polished Twitter thread with four writing styles, voice cloning, and a saved-thread library.",
 "price": 19,
 "whop": "",
 "tags": [
@@ -1094,7 +1092,7 @@ const products = [
 {
 "id": "ticks",
 "name": "Ticks",
-"tagline": "Habit tracker with GitHub-style contribution grids and streaks",
+"tagline": "Habit tracker with GitHub-style contribution grids, streak counters, custom habits, completion stats, and a minimal daily check-in flow.",
 "price": 17,
 "whop": "",
 "tags": [
@@ -1107,7 +1105,7 @@ const products = [
 {
 "id": "tips",
 "name": "Tips",
-"tagline": "Creator support page with confetti, supporters wall, and analytics",
+"tagline": "Creator support page with confetti animations, supporters wall, goal tracking, click analytics, and Buy-Me-a-Coffee-style donations — fully self-hosted.",
 "price": 22,
 "whop": "",
 "tags": [
@@ -1120,7 +1118,7 @@ const products = [
 {
 "id": "tome",
 "name": "Tome",
-"tagline": "Visual bookshelf with reading progress, quotes, and stats",
+"tagline": "Visual bookshelf with reading progress tracking, quote saving, ratings, and reading stats — show off your library and reflect on what you've read.",
 "price": 24,
 "whop": "",
 "tags": [
@@ -1133,7 +1131,7 @@ const products = [
 {
 "id": "vault",
 "name": "Vault",
-"tagline": "Digital legacy app with dead man's switch and beneficiaries",
+"tagline": "Digital legacy vault with dead man's switch, beneficiary access, importance tagging, and secure item storage — pass on what matters.",
 "price": 29,
 "whop": "",
 "tags": [
@@ -1146,7 +1144,7 @@ const products = [
 {
 "id": "vision",
 "name": "Vision",
-"tagline": "Vision board with OKR framework, 365-day grid, and journals",
+"tagline": "Vision board paired with OKR framework, 365-day intention grid, daily journal entries, and goal categories — visualize and track ambitions.",
 "price": 29,
 "whop": "",
 "tags": [
@@ -1159,7 +1157,7 @@ const products = [
 {
 "id": "waitlist",
 "name": "Waitlist",
-"tagline": "Self-hosted waitlist with viral referral mechanics and leaderboard",
+"tagline": "Self-hosted waitlist with viral referral mechanics, referral leaderboard, growth analytics, CSV export, and customizable join page — go viral pre-launch.",
 "price": 27,
 "whop": "",
 "tags": [
