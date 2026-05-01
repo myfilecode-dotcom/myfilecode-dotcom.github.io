@@ -9,12 +9,12 @@
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { background: #0d1117; color: #e6edf3; font-family: -apple-system, 'Inter', sans-serif; }
 
-  .hero { padding: 80px 24px 48px; text-align: center; }
+  .hero { padding: 80px 24px 24px; text-align: center; }
   .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; letter-spacing: -0.03em; }
   .hero h1 span { color: #58a6ff; }
   .hero p { margin-top: 16px; color: #8b949e; font-size: 1.1rem; max-width: 520px; margin-left: auto; margin-right: auto; }
 
-  .search-wrap { display: flex; justify-content: center; padding: 0 24px 16px; max-width: 1200px; margin: 0 auto; }
+  .search-wrap { display: flex; justify-content: center; padding: 0 24px 40px; max-width: 1200px; margin: 0 auto; }
   .search { width: 100%; max-width: 480px; padding: 12px 16px 12px 44px; background: #161b22; border: 1px solid #30363d; border-radius: 10px; color: #e6edf3; font-size: 0.95rem; outline: none; transition: border-color 0.15s; background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%238b949e' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='11' cy='11' r='8'/><path d='m21 21-4.35-4.35'/></svg>"); background-repeat: no-repeat; background-position: 16px center; }
   .search::placeholder { color: #6e7681; }
   .search:focus { border-color: #58a6ff; }
@@ -36,6 +36,9 @@
   .buy-btn { padding: 8px 18px; background: #238636; color: #fff; border: none; border-radius: 8px; font-size: 0.85rem; font-weight: 600; cursor: pointer; transition: background 0.15s; text-decoration: none; display: inline-block; }
   .buy-btn:hover { background: #2ea44f; }
   .buy-btn.soon { background: #21262d; color: #6e7681; cursor: default; pointer-events: none; }
+
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tag { font-size: 0.72rem; padding: 3px 8px; background: #21262d; color: #8b949e; border-radius: 999px; letter-spacing: 0.02em; }
 
   .affiliate-banner { display: inline-flex; align-items: center; gap: 12px; margin-bottom: 32px; padding: 8px 20px 8px 8px; background: #161b22; border: 1px solid #30363d; border-radius: 999px; color: #e6edf3; text-decoration: none; font-size: 0.92rem; font-weight: 500; transition: all 0.15s; }
   .affiliate-banner:hover { border-color: #58a6ff; transform: translateY(-1px); }
@@ -65,7 +68,7 @@
 
 <script>
 const products = [
-  {"id": "alumni", "name": "Alumni", "tagline": "Network for alumni, mentor matching, job board", "price": 29, "whop": "https://whop.com/myfileapps/alumni-app"},
+  {"id": "alumni", "name": "Alumni", "tagline": "Network for alumni, mentor matching, job board", "price": 29, "whop": "https://whop.com/myfileapps/alumni-app", "tags": ["Mentors", "Jobs", "Profiles", "Messaging"]},
   {"id": "astro", "name": "Astro", "tagline": "Birth chart, compatibility scorer, lunar journal", "price": 19, "whop": "https://whop.com/myfileapps/astro-ed"},
   {"id": "baby", "name": "Baby", "tagline": "Compare and shortlist 162 baby names with compatibility", "price": 29, "whop": "https://whop.com/myfileapps/baby-cc"},
   {"id": "blocks", "name": "Blocks", "tagline": "Time-blocking planner with 30-min slots and templates", "price": 29, "whop": ""},
@@ -183,7 +186,7 @@ function renderGrid() {
 
   if (searchQuery) {
     const q = searchQuery.toLowerCase();
-    filtered = filtered.filter(p => p.name.toLowerCase().includes(q) || p.tagline.toLowerCase().includes(q));
+    filtered = filtered.filter(p => p.name.toLowerCase().includes(q) || p.tagline.toLowerCase().includes(q) || (p.tags || []).some(t => t.toLowerCase().includes(q)));
   }
 
   filtered = [...filtered].sort((a, b) => (b.whop ? 1 : 0) - (a.whop ? 1 : 0));
@@ -200,6 +203,7 @@ function renderGrid() {
         <div class="card-name">${p.name}</div>
       </div>
       <div class="card-desc">${p.tagline}</div>
+      ${p.tags ? `<div class="tags">${p.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>` : ''}
       <div class="card-footer">
         <div class="price">$${p.price}</div>
         ${p.whop
