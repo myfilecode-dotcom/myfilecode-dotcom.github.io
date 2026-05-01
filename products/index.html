@@ -65,9 +65,17 @@
   .modal-pages { display: flex; flex-wrap: wrap; gap: 8px; }
   .modal-page { font-size: 0.82rem; padding: 5px 12px; background: #161b22; border: 1px solid #30363d; border-radius: 6px; color: #e6edf3; text-transform: capitalize; }
   .modal-screens { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 10px; }
-  .modal-shot { background: #161b22; border: 1px solid #30363d; border-radius: 8px; overflow: hidden; }
+  .modal-shot { background: #161b22; border: 1px solid #30363d; border-radius: 8px; overflow: hidden; cursor: pointer; transition: border-color 0.15s, transform 0.15s; }
+  .modal-shot:hover { border-color: #58a6ff; transform: translateY(-2px); }
+  .modal-shot.active { border-color: #58a6ff; box-shadow: 0 0 0 1px #58a6ff; }
+  .modal-shot.active .modal-shot-label { color: #58a6ff; }
   .modal-shot img { width: 100%; height: auto; display: block; }
-  .modal-shot-label { padding: 6px 10px; font-size: 0.74rem; color: #8b949e; border-top: 1px solid #21262d; text-transform: capitalize; }
+  .modal-shot-label { padding: 6px 10px; font-size: 0.74rem; color: #8b949e; border-top: 1px solid #21262d; text-transform: capitalize; transition: color 0.15s; }
+  .modal-hero img { transition: opacity 0.18s; }
+  @media (max-width: 600px) {
+    .modal-shot { cursor: default; }
+    .modal-shot:hover { transform: none; border-color: #30363d; }
+  }
   .modal-cta { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-top: 28px; padding-top: 24px; border-top: 1px solid #21262d; flex-wrap: wrap; }
   .modal-price { font-size: 1.6rem; font-weight: 800; }
   .modal-buttons { display: flex; gap: 10px; flex-wrap: wrap; }
@@ -1257,7 +1265,7 @@ function openModal(id) {
   const screensCount = m.screens.length;
   const pagesHTML = m.screens.map(s => `<span class="modal-page">${pageLabel(s)}</span>`).join('');
   const shotsHTML = m.screens.map(s => `
-    <div class="modal-shot">
+    <div class="modal-shot${s === m.hero ? ' active' : ''}" data-screen="${s}">
       <img src="/promo/${id}/${s}" alt="${pageLabel(s)}" loading="lazy" />
       <div class="modal-shot-label">${pageLabel(s)}</div>
     </div>`).join('');
@@ -1302,6 +1310,21 @@ function openModal(id) {
   `;
   document.getElementById('modal-backdrop').classList.add('open');
   document.body.classList.add('modal-open');
+
+  const heroImg = document.querySelector('.modal-hero img');
+  document.querySelectorAll('.modal-shot').forEach(shot => {
+    shot.addEventListener('click', () => {
+      const screen = shot.getAttribute('data-screen');
+      if (!heroImg || !screen) return;
+      heroImg.style.opacity = '0';
+      setTimeout(() => {
+        heroImg.src = `/promo/${id}/${screen}`;
+        heroImg.style.opacity = '1';
+      }, 150);
+      document.querySelectorAll('.modal-shot.active').forEach(s => s.classList.remove('active'));
+      shot.classList.add('active');
+    });
+  });
 }
 
 function closeModal() {
